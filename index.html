@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-training</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            padding: 5%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        span {
+            text-decoration: underline;
+        }
+
+        code {
+            color: blue;
+        }
+
+        em {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>
+            <h1>JS - Модуль 1. Змінні та типи. Основи функцій</h1>
+        </div>
+        <div>
+            <h2>Задача 1. Замовлення дроїдів</h2>
+            <p>Станція з продажу ремонтних дроїдів готова до запуску, залишилося написати програмне забезпечення для
+                відділу продажів.
+            </p>
+            <p>Оголоси функцію <em>makeTransaction</em>, яка очікує два параметри, значення яких будуть задаватися під
+                час її
+                виклику:</p>
+            <ul>
+                <li>
+                    <em>quantity</em> — перший параметр, число, що містить кількість замовлених дроїдів
+                </li>
+                <li>
+                    <em>pricePerDroid</em> — другий параметр, число, що містить вартість одного дроїда
+                </li>
+            </ul>
+            <p>
+                Доповни код функції так, щоб вона повертала рядок з повідомленням про покупку ремонтних дроїдів:
+                <span>"You
+                    ordered <<em>quantity</em>> droids worth <<em>totalPrice</em>>
+                            credits!"</span>,
+                де:
+            </p>
+            <ul>
+                <li>
+                    <<em>quantity</em>> — це кількість замовлених дроїдів
+                </li>
+                <li>
+                    <<em>totalPrice</em>> — це загальна вартість замовлення, тобто вартість усіх
+                        замовлених дроїдів
+                </li>
+            </ul>
+            <p>
+                Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її
+                роботи. У консоль
+                будуть виведені результати її роботи.
+            </p>
+            <p><code>console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
+                <br>console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
+                <br>console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
+            </code></p>
+            <p>Залиш цей код для перевірки ментором.</p>
+            <p>На що буде звертати увагу ментор при перевірці:</p>
+            <ul>
+                <li>
+                    Оголошена функція makeTransaction(quantity, pricePerDroid)
+                </li>
+                <li>
+                    Виклик makeTransaction(5, 3000) повертає "You ordered 5 droids worth 15000 credits!"
+                </li>
+                <li>
+                    Виклик makeTransaction(3, 1000) повертає "You ordered 3 droids worth 3000 credits!"
+                </li>
+                <li>
+                    Виклик makeTransaction(10, 500) повертає "You ordered 10 droids worth 5000 credits!"
+                </li>
+                <li>
+                    В консоль виведині всі результати викликів
+                </li>
+                <li>
+                    Виклик makeTransaction з будь якими-валідними аргументами повертає правильне значення
+                </li>
+            </ul>
+            <p></p>
+        </div>
+        <script src="./js/task-1.js" defer></script>
+        <div>
+            <h2>Задача 2. Доставка товару</h2>
+            <p>Оголоси функцію <em>getShippingMessage</em>, яка очікує три параметри, значення яких будуть
+                задаватися під час її
+                виклику:</p>
+            <ul>
+                <li>
+                    <em>country</em> — перший параметр, рядок, що містить країну доставки
+                </li>
+                <li>
+                    <em>price</em> — другий параметр,число, що містить загальну вартість товару
+                </li>
+                <li>
+                    <em>deliveryFee</em> — третій
+                    параметр, число, що
+                    містить вартість доставки товару
+                </li>
+            </ul>
+            <p>
+                Доповни код функції так, щоб вона повертала рядок з повідомленням про доставку товару в
+                країну користувача: <span>"Shipping to <<em>country</em>> will cost
+                        <<em>totalPrice</em>> credits"</span>, де:
+            </p>
+            <ul>
+                <li>
+                    <<em>country</em>> — це країни доставки
+                </li>
+                <li>
+                    <<em>totalPrice</em>> — це загальна вартість замовлення, що включає вартість товару
+                        і його доставки
+                </li>
+            </ul>
+            Візьми код нижче і встав після оголошення своєї функції для перевірки
+            коректності її роботи. У консоль будуть виведені результати її роботи.
+            <p></p>
+            <p>
+                <code>console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits" 
+                    <br> console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
+                    <br>console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"</code>
+            </p>
+            <p>Залиш цей код для перевірки ментором.</p>
+            <p></p>
+            <p>На що буде звертати увагу ментор при перевірці:</p>
+            <ul>
+                <li>
+                    Оголошена функція getShippingMessage(country, price, deliveryFee)
+                </li>
+                <li>
+                    Виклик getShippingMessage("Australia", 120, 50) повертає "Shipping to
+                    Australia willcost 170 credits"
+                </li>
+                <li>
+                    Виклик getShippingMessage("Germany", 80, 20) повертає "Shipping to
+                    Germany will cost 100 credits"
+                </li>
+                <li>
+                    Виклик getShippingMessage("Sweden", 100, 20) повертає "Shipping to
+                    Sweden will cost 120 credits"
+                </li>
+                <li>
+                    Виклик getShippingMessage з будь якими-валідними аргументами повертає
+                    правильне значення
+                </li>
+            </ul>
+            <p></p>
+        </div>
+        <script src="./js/task-2.js" defer></script>
+        <div>
+            <h2>Задача 3. Ширина елемента</h2>
+            <p>Оголоси функцію getElementWidth, яка очікує три параметри, значення яких будуть
+                задаватися під час її виклику:
+            </p>
+            <ul>
+                <li>
+                    <em>content</em> — перший параметр, ширина контенту
+                </li>
+                <li>
+                    <em>padding</em> — другий параметр, значення горизонтального падінгу для кожної зі сторін
+                </li>
+                <li>
+                    <em>border</em> — третій параметр, значення товщини бордера для кожної зі сторін Значення всіх
+                    параметрів
+                    будуть
+                    рядками формату Npx де N — це довільне число, ціле або дробове.
+                </li>
+            </ul>
+            <p>
+                Доповни код функції так, щоб вона повертала число — загальну ширину елемента. При
+                розрахунку загальної ширини орієнтуйся на те, що значення box-sizing дорівнює
+                border-box.
+            </p>
+            <p>Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її
+                роботи. У консоль будуть виведені результати її роботи.</p>
+            <p><code>console.log(getElementWidth("50px", "8px", "4px")); // 74
+                    <br>console.log(getElementWidth("60px", "12px", "8.5px")); // 101
+                    <br>console.log(getElementWidth("200px", "0px", "0px")); // 200
+                </code></p>
+            <p>Залиш цей код для перевірки ментором.</p>
+            <p></p>
+            <p>На що буде звертати увагу ментор при перевірці:</p>
+            <ul>
+                <li>
+                    Оголошена функція getElementWidth(content, padding, border)
+                </li>
+                <li>
+                    Виклик getElementWidth("50px", "8px", "4px") повертає число 74
+                </li>
+                <li>
+                    Виклик getElementWidth("60px", "12px", "8.5px") повертає число 101
+                </li>
+                <li>
+                    Виклик getElementWidth("200px", "0px", "0px") повертає число 200
+                </li>
+                <li>
+                    Виклик getElementWidth з будь якими-валідними аргументами повертає правильне значення
+                </li>
+            </ul>
+        </div>
+        <script src="./js/task-3.js" defer></script>
+    </section>
+
+</body>
+
+</html>
