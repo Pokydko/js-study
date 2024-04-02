@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ua">
 
 <head>
     <meta charset="UTF-8">
@@ -28,199 +28,397 @@
             color: aqua;
         }
     </style>
+    <script src="./js/task-1.js" defer></script>
+    <script src="./js/task-2.js" defer></script>
+    <script src="./js/task-3.js" defer></script>
+    <script src="./js/task-4.js" defer></script>
 </head>
 
 <body>
-    <section>
-        <div>
-            <h1>JS - Модуль 1. Змінні та типи. Основи функцій</h1>
-        </div>
-        <div>
-            <h2>Задача 1. Замовлення дроїдів</h2>
-            <p>Станція з продажу ремонтних дроїдів готова до запуску, залишилося написати програмне забезпечення для
-                відділу продажів.
-            </p>
-            <p>Оголоси функцію <em>makeTransaction</em>, яка очікує два параметри, значення яких будуть задаватися під
-                час її
-                виклику:</p>
-            <ul>
-                <li>
-                    <em>quantity</em> — перший параметр, число, що містить кількість замовлених дроїдів
-                </li>
-                <li>
-                    <em>pricePerDroid</em> — другий параметр, число, що містить вартість одного дроїда
-                </li>
-            </ul>
-            <p>
-                Доповни код функції так, щоб вона повертала рядок з повідомленням про покупку ремонтних дроїдів:
-                <span>"You
-                    ordered <em>&lt;quantity&gt</em> droids worth <em>&lt;totalPrice&gt</em>
-                    credits!"</span>,
-                де:
-            </p>
-            <ul>
-                <li>
-                    <em>&lt;quantity&gt</em> — це кількість замовлених дроїдів
-                </li>
-                <li>
-                    <em>&lt;totalPrice&gt</em> — це загальна вартість замовлення, тобто вартість усіх
-                    замовлених дроїдів
-                </li>
-            </ul>
-            <p>
-                Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її
-                роботи. У консоль
-                будуть виведені результати її роботи.
-            </p>
-            <p><code>console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
-                <br>console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
-                <br>console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
-            </code></p>
-            <p>Залиш цей код для перевірки ментором.</p>
-            <p>На що буде звертати увагу ментор при перевірці:</p>
-            <ul>
-                <li>
-                    Оголошена функція makeTransaction(quantity, pricePerDroid)
-                </li>
-                <li>
-                    Виклик makeTransaction(5, 3000) повертає "You ordered 5 droids worth 15000 credits!"
-                </li>
-                <li>
-                    Виклик makeTransaction(3, 1000) повертає "You ordered 3 droids worth 3000 credits!"
-                </li>
-                <li>
-                    Виклик makeTransaction(10, 500) повертає "You ordered 10 droids worth 5000 credits!"
-                </li>
-                <li>
-                    В консоль виведині всі результати викликів
-                </li>
-                <li>
-                    Виклик makeTransaction з будь якими-валідними аргументами повертає правильне значення
-                </li>
-            </ul>
-            <p></p>
-        </div>
-        <script src="./js/task-1.js" defer></script>
-        <div>
-            <h2>Задача 2. Доставка товару</h2>
-            <p>Оголоси функцію <em>getShippingMessage</em>, яка очікує три параметри, значення яких будуть
-                задаватися під час її
-                виклику:</p>
-            <ul>
-                <li>
-                    <em>country</em> — перший параметр, рядок, що містить країну доставки
-                </li>
-                <li>
-                    <em>price</em> — другий параметр,число, що містить загальну вартість товару
-                </li>
-                <li>
-                    <em>deliveryFee</em> — третій
-                    параметр, число, що
-                    містить вартість доставки товару
-                </li>
-            </ul>
-            <p>
-                Доповни код функції так, щоб вона повертала рядок з повідомленням про доставку товару в
-                країну користувача: <span>"Shipping to <em>&lt;country&gt</em> will cost
-                    <em>&lt;totalPrice&gt</em> credits"</span>, де:
-            </p>
-            <ul>
-                <li>
-                    <em>&lt;country&gt</em> — це країни доставки
-                </li>
-                <li>
-                    <em>&lt;totalPrice&gt</em> — це загальна вартість замовлення, що включає вартість товару
-                    і його доставки
-                </li>
-            </ul>
-            Візьми код нижче і встав після оголошення своєї функції для перевірки
-            коректності її роботи. У консоль будуть виведені результати її роботи.
-            <p></p>
-            <p>
-                <code>console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits" 
-                    <br> console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
-                    <br>console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"</code>
-            </p>
-            <p>Залиш цей код для перевірки ментором.</p>
-            <p></p>
-            <p>На що буде звертати увагу ментор при перевірці:</p>
-            <ul>
-                <li>
-                    Оголошена функція getShippingMessage(country, price, deliveryFee)
-                </li>
-                <li>
-                    Виклик getShippingMessage("Australia", 120, 50) повертає "Shipping to
-                    Australia willcost 170 credits"
-                </li>
-                <li>
-                    Виклик getShippingMessage("Germany", 80, 20) повертає "Shipping to
-                    Germany will cost 100 credits"
-                </li>
-                <li>
-                    Виклик getShippingMessage("Sweden", 100, 20) повертає "Shipping to
-                    Sweden will cost 120 credits"
-                </li>
-                <li>
-                    Виклик getShippingMessage з будь якими-валідними аргументами повертає
-                    правильне значення
-                </li>
-            </ul>
-            <p></p>
-        </div>
-        <script src="./js/task-2.js" defer></script>
-        <div>
-            <h2>Задача 3. Ширина елемента</h2>
-            <p>Оголоси функцію getElementWidth, яка очікує три параметри, значення яких будуть
-                задаватися під час її виклику:
-            </p>
-            <ul>
-                <li>
-                    <em>content</em> — перший параметр, ширина контенту
-                </li>
-                <li>
-                    <em>padding</em> — другий параметр, значення горизонтального падінгу для кожної зі сторін
-                </li>
-                <li>
-                    <em>border</em> — третій параметр, значення товщини бордера для кожної зі сторін Значення всіх
-                    параметрів
-                    будуть
-                    рядками формату Npx де N — це довільне число, ціле або дробове.
-                </li>
-            </ul>
-            <p>
-                Доповни код функції так, щоб вона повертала число — загальну ширину елемента. При
-                розрахунку загальної ширини орієнтуйся на те, що значення box-sizing дорівнює
-                border-box.
-            </p>
-            <p>Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її
-                роботи. У консоль будуть виведені результати її роботи.</p>
-            <p><code>console.log(getElementWidth("50px", "8px", "4px")); // 74
-                    <br>console.log(getElementWidth("60px", "12px", "8.5px")); // 101
-                    <br>console.log(getElementWidth("200px", "0px", "0px")); // 200
-                </code></p>
-            <p>Залиш цей код для перевірки ментором.</p>
-            <p></p>
-            <p>На що буде звертати увагу ментор при перевірці:</p>
-            <ul>
-                <li>
-                    Оголошена функція getElementWidth(content, padding, border)
-                </li>
-                <li>
-                    Виклик getElementWidth("50px", "8px", "4px") повертає число 74
-                </li>
-                <li>
-                    Виклик getElementWidth("60px", "12px", "8.5px") повертає число 101
-                </li>
-                <li>
-                    Виклик getElementWidth("200px", "0px", "0px") повертає число 200
-                </li>
-                <li>
-                    Виклик getElementWidth з будь якими-валідними аргументами повертає правильне значення
-                </li>
-            </ul>
-        </div>
-        <script src="./js/task-3.js" defer></script>
-    </section>
+    <div>
+        <h1>JS</h1>
+    </div>
+    <div>
+        <h2>
+            Задача 1. Замовлення дроїдів
+        </h2>
+        <p>Виконуй це завдання у файлі task-1.js</p>
+        <p>Станція з продажу ремонтних дроїдів готова до запуску, залишилося написати програмне забезпечення для відділу
+            продажів. Оголоси функцію makeTransaction(quantity, pricePerDroid, customerCredits), яка складає та повертає
+            повідомлення про купівлю ремонтних дроїдів.</p>
+        <p>Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:</p>
+        <p>quantity — кількість замовлених дроїдів<br>
+            pricePerDroid — ціна одного дроїда<br>
+            customerCredits — сума коштів на рахунку клієнта</p>
+        <p>Доповни функцію таким чином:</p>
+        <ul>
+            <li>
+                <p>Оголоси змінну для зберігання загальної суми замовлення (загальна вартість усіх замовлених дроїдів) і
+                    задай їй
+                    вираз розрахунку цієї суми.</p>
+            </li>
+            <li>
+                <p>
+                    Додай перевірку, чи зможе клієнт оплатити замовлення:
+                </p>
+                <ul>
+                    <li>
+                        <p>якщо сума до сплати перевищує кількість кредитів на рахунку клієнта, функція має повертати
+                            рядок "Insufficient
+                            funds!"
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            в іншому випадку функція має повертати рядок "You ordered <em>&lt;quantity&gt;</em> droids
+                            worth
+                            <em>&lt;totalPrice&gt;</em> credits!", де
+                            <em>&lt;quantity&gt;</em>
+                            це кількість замовлених дроїдів, а <em>&lt;totalPrice&gt;</em> це їх загальна вартість.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У
+            консоль будуть виведені результати її роботи.</p>
+        <code><p>
+        console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
+        <br>console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
+        <br>console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
+        <br>console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
+        <br>console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
+</p></code>
+        <p>Залиш цей код для перевірки ментором.</p>
+        <p>На що буде звертати увагу ментор при перевірці:</p>
+        <ul>
+            <li>
+                <p>Оголошена функція makeTransaction(quantity, pricePerDroid, customerCredits)</p>
+            </li>
+            <li>
+                <p>
+                    Виклик makeTransaction(5, 3000, 23000) повертає "You ordered 5 droids worth 15000 credits!"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик makeTransaction(3, 1000, 15000) повертає "You ordered 3 droids worth 3000 credits!"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик makeTransaction(10, 5000, 8000) повертає "Insufficient funds!"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик makeTransaction(8, 2000, 10000) повертає "Insufficient funds!"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик makeTransaction(10, 500, 5000) повертає "You ordered 10 droids worth 5000 credits!"
+                </p>
+            </li>
+        </ul>
+    </div>
+
+
+    <div>
+        <h2>Задача 2. Форматування повідомлення</h2>
+        <p>
+            Виконуй це завдання у файлі task-2.js
+        </p>
+        <p>
+            Оголоси функцію formatMessage(message, maxLength), яка приймає рядок (параметр message) та перевіряє
+            його довжину відповідно до заданої максимальної довжини (параметр maxLength).
+        </p>
+        <p>
+            Доповни код функції таким чином, що:
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Якщо довжина рядка дорівнює або менша за maxLength, то функція повертає початковий рядок без змін.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Якщо довжина перевищує maxLength, то функція обрізає рядок до maxLength символів, додає трикрапку
+                    "..." в кінці та повертає обрізану версію.
+                </p>
+            </li>
+        </ul>
+        <p>
+            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У
+            консоль
+            будуть виведені результати її роботи.
+        </p>
+        <code><p>
+    console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."<br>
+    console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"<br>
+    console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."<br>
+    console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus
+    nec"<br>
+    console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."<br>
+    console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a
+    felis in nunc fringilla"
+</p></code>
+        <p>
+            Залиш цей код для перевірки ментором.
+        </p>
+        <p>
+            На що буде звертати увагу ментор при перевірці:
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Оголошена функція formatMessage(message, maxLength)
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції formatMessage("Curabitur ligula sapien", 16) повертає "Curabitur ligula..."
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції formatMessage("Curabitur ligula sapien", 23) повертає "Curabitur ligula sapien"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції formatMessage("Vestibulum facilisis purus nec", 20) повертає "Vestibulum
+                    facilisis..."
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції formatMessage("Vestibulum facilisis purus nec", 30) повертає "Vestibulum facilisis
+                    purus
+                    nec"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 15) повертає "Nunc sed
+                    turpis..."
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 41) повертає "Nunc sed
+                    turpis a felis in nunc fringilla"
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h2>Задача 3. Перевірка спаму</h2>
+        <p>
+            Виконуй це завдання у файлі task-3.js
+        </p>
+        <p>
+            Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його на вміст заборонених
+            слів spam і sale, і повертає результат перевірки. Слова в рядку параметра message можуть бути в
+            довільному регістрі, наприклад SPAM або sAlE.
+        </p>
+        <p>
+            Доповни код функції таким чином, що:
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Якщо знайдено заборонене слово (spam або sale), то функція повертає буль true
+                </p>
+            </li>
+            <li>
+                <p>
+                    Якщо в рядку відсутні заборонені слова, функція повертає буль false
+                </p>
+            </li>
+
+        </ul>
+        <p>
+            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У
+            консоль
+            будуть виведені результати її роботи.
+        </p>
+        <code><p>
+    console.log(checkForSpam("Latest technology news")); // false<br>
+    console.log(checkForSpam("JavaScript weekly newsletter")); // false <br>
+    console.log(checkForSpam("Get best sale offers now!")); // true <br>
+    console.log(checkForSpam("Amazing SalE, only tonight!")); // true <br>
+    console.log(checkForSpam("Trust me, this is not a spam message")); // true <br>
+    console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true <br>
+    console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
+</p></code>
+        <p>
+            Залиш цей код для перевірки ментором.
+        </p>
+        <p>
+            На що буде звертати увагу ментор при перевірці:
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Оголошена функція checkForSpam(message).
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції checkForSpam("Latest technology news") повертає false
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції checkForSpam("JavaScript weekly newsletter")повертає false
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції checkForSpam("Get best sale offers now!") повертає true
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції checkForSpam("Amazing SalE, only tonight!") повертає true
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції checkForSpam("Trust me, this is not a spam message") повертає true
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції checkForSpam("Get rid of sPaM emails. Our book in on sale!") повертає true
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик функції checkForSpam("[SPAM] How to earn fast money?") повертає true
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h2>Задача 4. Доставка товару</h2>
+        <p>
+            Виконуй це завдання у файлі task-4.js
+        </p>
+        <p>
+            Оголоси функцію getShippingCost(country), яка повинна перевіряти можливість доставки товару в країну
+            користувача (параметр country) і повертати повідомлення про результат. Обов'язково використовуй
+            інструкцію switch.
+        </p>
+        <p>
+            Формат рядка, що повертається "Shipping to <em>&lt;country&gt;</em> will cost <em>&lt;price&gt;</em>
+            credits",
+            де
+            замість
+            <em>&lt;country&gt;</em> і
+            <em>&lt;price&gt;</em> необхідно підставити відповідні значення.
+        </p>
+        <p>
+            Список країн і вартість доставки:
+        </p>
+        <ul>
+            <li>
+                <p>
+                    China — 100 кредитів
+                </p>
+            </li>
+            <li>
+                <p>
+                    Chile — 250 кредитів
+                </p>
+            </li>
+            <li>
+                <p>
+                    Australia — 170 кредитів
+                </p>
+            </li>
+            <li>
+                <p>
+                    Jamaica — 120 кредитів
+                </p>
+            </li>
+        </ul>
+        <p>
+            Зі списку видно, що доставка можлива не скрізь. Якщо зазначена країна відсутня у
+            списку,
+            то функція повинна повернути рядок "Sorry, there is no delivery to your country".
+        </p>
+        <p>
+            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її
+            роботи. У консоль будуть виведені результати її роботи.
+        </p>
+        <code><p>
+    console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170
+    credits"<br>
+    console.log(getShippingCost("Germany")); // "Sorry, there is no delivery to your
+    country"<br>
+    console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"<br>
+    console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"<br>
+    console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120
+    credits"<br>
+    console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your
+    country"
+</p></code>
+        <p>
+            Залиш цей код для перевірки ментором.
+        </p>
+        <p>
+            На що буде звертати увагу ментор при перевірці:
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Оголошена функція getShippingCost(country)
+                </p>
+            </li>
+            <li>
+                <p>
+                    У тілі функції використана інструкція switch
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик getShippingCost("Australia") повертає "Shipping to Australia will cost 170
+                    credits"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик getShippingCost("Germany") повертає "Sorry, there is no delivery to your
+                    country"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик getShippingCost("China") повертає "Shipping to China will cost 100 credits"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик getShippingCost("Chile") повертає "Shipping to Chile will cost 250 credits"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик getShippingCost("Jamaica") повертає "Shipping to Jamaica will cost 120
+                    credits"
+                </p>
+            </li>
+            <li>
+                <p>
+                    Виклик getShippingCost("Sweden") повертає "Sorry, there is no delivery to your
+                    country"
+                </p>
+            </li>
+        </ul>
+    </div>
 
 </body>
 
