@@ -31,139 +31,113 @@
     <script src="./js/task-1.js" defer></script>
     <script src="./js/task-2.js" defer></script>
     <script src="./js/task-3.js" defer></script>
-    <script src="./js/task-4.js" defer></script>
 </head>
 
 <body>
     <div>
-        <h1>JS</h1>
+        <h1>JS. m3</h1>
     </div>
     <div>
+        <p>
+            Термін slug — це зрозумілий людині унікальний ідентифікатор, який використовується у веб розробці для
+            створення
+            читабельних URL-адрес. <br>
+
+            Наприклад, замість того, щоб користувач побачив в адресному рядку mysite.com/posts/1q8fh74tx, можна зробити
+            slug
+            із
+            назви статті. У результаті адреса буде приємнішою для сприйняття: mysite.com/posts/arrays-for-begginers.
+            <br>
+            <span>Slug</span> — це завжди рядок у нижньому регістрі, слова якого розділені тире.
+        </p>
+
+        <h2>Задача 1. Генератор slug</h2>
+        <p>Напиши функцію slugify(title), яка приймає заголовок статті, параметр title і повертає slug, створений із
+            цього рядка.</p>
+        <ul>
+            <li>
+                Значенням параметра title будуть рядки, слова яких розділені лише пробілами.
+            </li>
+            <li>
+                Усі символи slug повинні бути в нижньому регістрі.
+            </li>
+            <li>
+                Усі слова slug повинні бути розділені тире.
+            </li>
+        </ul>
+        <p>
+            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль
+            будуть
+            виведені
+            результати її роботи.
+        </p>
+        <code>
+    <em>
+        console.log(slugify("Arrays for begginers")); // "arrays-for-begginers" <br>
+        console.log(slugify("English for developer")); // "english-for-developer" <br>
+        console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript" <br>
+        console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); //
+        "how-to-become-a-junior-developer-in-two-weeks"
+    </em>
+</code>
+        <p>
+            Залиш цей код для перевірки ментором.
+        </p>
+        <p>
+            На що буде звертати увагу ментор при перевірці:
+        </p>
+        <ul>
+            <li>
+                Оголошена функція slugify(title)
+            </li>
+            <li>
+                Виклик slugify("Arrays for begginers") повертає "arrays-for-begginers"
+            </li>
+            <li>
+                Виклик slugify("English for developer") повертає "english-for-developer"
+            </li>
+            <li>
+                Виклик slugify("Ten secrets of JavaScript") повертає "ten-secrets-of-javascript"
+            </li>
+            <li>
+                Виклик slugify("How to become a JUNIOR developer in TWO WEEKS") повертає
+                "how-to-become-a-junior-developer-in-two-weeks"
+            </li>
+        </ul>
         <h2>
-            Задача 1. Замовлення дроїдів
+            Задача 2. Композиція масивів
         </h2>
-        <p>Виконуй це завдання у файлі task-1.js</p>
-        <p>Станція з продажу ремонтних дроїдів готова до запуску, залишилося написати програмне забезпечення для відділу
-            продажів. Оголоси функцію makeTransaction(quantity, pricePerDroid, customerCredits), яка складає та повертає
-            повідомлення про купівлю ремонтних дроїдів.</p>
-        <p>Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:</p>
-        <p>quantity — кількість замовлених дроїдів<br>
-            pricePerDroid — ціна одного дроїда<br>
-            customerCredits — сума коштів на рахунку клієнта</p>
-        <p>Доповни функцію таким чином:</p>
-        <ul>
-            <li>
-                <p>Оголоси змінну для зберігання загальної суми замовлення (загальна вартість усіх замовлених дроїдів) і
-                    задай їй
-                    вираз розрахунку цієї суми.</p>
-            </li>
-            <li>
-                <p>
-                    Додай перевірку, чи зможе клієнт оплатити замовлення:
-                </p>
-                <ul>
-                    <li>
-                        <p>якщо сума до сплати перевищує кількість кредитів на рахунку клієнта, функція має повертати
-                            рядок "Insufficient
-                            funds!"
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            в іншому випадку функція має повертати рядок "You ordered <em>&lt;quantity&gt;</em> droids
-                            worth
-                            <em>&lt;totalPrice&gt;</em> credits!", де
-                            <em>&lt;quantity&gt;</em>
-                            це кількість замовлених дроїдів, а <em>&lt;totalPrice&gt;</em> це їх загальна вартість.
-                        </p>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <p>Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У
-            консоль будуть виведені результати її роботи.</p>
-        <code><p>
-        console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
-        <br>console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
-        <br>console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
-        <br>console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
-        <br>console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
-</p></code>
-        <p>Залиш цей код для перевірки ментором.</p>
-        <p>На що буде звертати увагу ментор при перевірці:</p>
-        <ul>
-            <li>
-                <p>Оголошена функція makeTransaction(quantity, pricePerDroid, customerCredits)</p>
-            </li>
-            <li>
-                <p>
-                    Виклик makeTransaction(5, 3000, 23000) повертає "You ordered 5 droids worth 15000 credits!"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик makeTransaction(3, 1000, 15000) повертає "You ordered 3 droids worth 3000 credits!"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик makeTransaction(10, 5000, 8000) повертає "Insufficient funds!"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик makeTransaction(8, 2000, 10000) повертає "Insufficient funds!"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик makeTransaction(10, 500, 5000) повертає "You ordered 10 droids worth 5000 credits!"
-                </p>
-            </li>
-        </ul>
-    </div>
-
-
-    <div>
-        <h2>Задача 2. Форматування повідомлення</h2>
         <p>
-            Виконуй це завдання у файлі task-2.js
+            Напиши функцію під назвою makeArray, яка приймає три параметри: firstArray (масив), secondArray (масив) і
+            maxLength
+            (число). Функція повинна створювати новий масив, який містить усі елементи з firstArray, а потім усі
+            елементи з
+            secondArray.
         </p>
         <p>
-            Оголоси функцію formatMessage(message, maxLength), яка приймає рядок (параметр message) та перевіряє
-            його довжину відповідно до заданої максимальної довжини (параметр maxLength).
+            Якщо кількість елементів у новому масиві перевищує maxLength, функція повинна повернути копію масиву з
+            довжиною
+            maxLength елементів. <br>
+            В іншому випадку функція повинна повернути весь новий масив.
         </p>
         <p>
-            Доповни код функції таким чином, що:
+            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль
+            будуть
+            виведені
+            результати її роботи.
         </p>
-        <ul>
-            <li>
-                <p>
-                    Якщо довжина рядка дорівнює або менша за maxLength, то функція повертає початковий рядок без змін.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Якщо довжина перевищує maxLength, то функція обрізає рядок до maxLength символів, додає трикрапку
-                    "..." в кінці та повертає обрізану версію.
-                </p>
-            </li>
-        </ul>
-        <p>
-            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У
-            консоль
-            будуть виведені результати її роботи.
-        </p>
-        <code><p>
-    console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."<br>
-    console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"<br>
-    console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."<br>
-    console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus
-    nec"<br>
-    console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."<br>
-    console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a
-    felis in nunc fringilla"
-</p></code>
+        <code>
+    <em>
+        console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"] <br>
+        console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston",
+        "Ajax"] <br>
+        console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"] <br>
+        console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"] <br>
+        console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune",
+        "Uranus"] <br>
+        console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
+    </em>
+</code>
         <p>
             Залиш цей код для перевірки ментором.
         </p>
@@ -172,87 +146,77 @@
         </p>
         <ul>
             <li>
-                <p>
-                    Оголошена функція formatMessage(message, maxLength)
-                </p>
+                Оголошена функція makeArray(firstArray, secondArray, maxLength)
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Curabitur ligula sapien", 16) повертає "Curabitur ligula..."
-                </p>
+                Виклик makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3) повертає ["Mango", "Poly", "Ajax"]
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Curabitur ligula sapien", 23) повертає "Curabitur ligula sapien"
-                </p>
+                Виклик makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4) повертає ["Mango", "Poly",
+                "Houston",
+                "Ajax"]
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Vestibulum facilisis purus nec", 20) повертає "Vestibulum
-                    facilisis..."
-                </p>
+                Виклик makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3) повертає ["Mango", "Ajax",
+                "Chelsea"]
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Vestibulum facilisis purus nec", 30) повертає "Vestibulum facilisis
-                    purus
-                    nec"
-                </p>
+                Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2) повертає ["Earth", "Jupiter"]
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 15) повертає "Nunc sed
-                    turpis..."
-                </p>
+                Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4) повертає ["Earth", "Jupiter",
+                "Neptune",
+                "Uranus"]
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 41) повертає "Nunc sed
-                    turpis a felis in nunc fringilla"
-                </p>
+                Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0) повертає []
+            </li>
+            <li>
+                Виклик функції makeArray() з випадковими масивами і випадковим числом повертає правильний масив
             </li>
         </ul>
-    </div>
-    <div>
-        <h2>Задача 3. Перевірка спаму</h2>
+        <h2>
+            Задача 3. Фільтрація масиву чисел
+        </h2>
         <p>
-            Виконуй це завдання у файлі task-3.js
+            Напиши функцію filterArray(numbers, value), яка приймає масив чисел (numbers) та значення (value) як
+            параметри.
+            Функція
+            повинна повертати новий масив лише тих чисел із масиву numbers, які більші за значення value.
         </p>
         <p>
-            Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його на вміст заборонених
-            слів spam і sale, і повертає результат перевірки. Слова в рядку параметра message можуть бути в
-            довільному регістрі, наприклад SPAM або sAlE.
-        </p>
-        <p>
-            Доповни код функції таким чином, що:
+            Усередині функції:
         </p>
         <ul>
             <li>
-                <p>
-                    Якщо знайдено заборонене слово (spam або sale), то функція повертає буль true
-                </p>
+                Створи порожній масив, у який будеш додавати підходящі числа.
             </li>
             <li>
-                <p>
-                    Якщо в рядку відсутні заборонені слова, функція повертає буль false
-                </p>
+                Використай цикл для ітерації кожного елемента масиву numbers.
             </li>
-
+            <li>
+                Використовуй умовний оператор if усередині циклу для перевірки кожного елемента и додавання до свого
+                масиву.
+            </li>
+            <li>
+                Поверни свій новий масив з підходящими числами як результат.
+            </li>
         </ul>
         <p>
-            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У
-            консоль
-            будуть виведені результати її роботи.
+            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль
+            будуть
+            виведені
+            результати її роботи.
         </p>
-        <code><p>
-    console.log(checkForSpam("Latest technology news")); // false<br>
-    console.log(checkForSpam("JavaScript weekly newsletter")); // false <br>
-    console.log(checkForSpam("Get best sale offers now!")); // true <br>
-    console.log(checkForSpam("Amazing SalE, only tonight!")); // true <br>
-    console.log(checkForSpam("Trust me, this is not a spam message")); // true <br>
-    console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true <br>
-    console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
-</p></code>
+        <code>
+    <em>
+        console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5] <br>
+        console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5] <br>
+        console.log(filterArray([1, 2, 3, 4, 5], 5)); // [] <br>
+        console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76] <br>
+        console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+    </em>
+</code>
         <p>
             Залиш цей код для перевірки ментором.
         </p>
@@ -261,165 +225,28 @@
         </p>
         <ul>
             <li>
-                <p>
-                    Оголошена функція checkForSpam(message).
-                </p>
+                Оголошена функція filterArray(numbers, value)
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("Latest technology news") повертає false
-                </p>
+                Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає [4, 5]
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("JavaScript weekly newsletter")повертає false
-                </p>
+                Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає [5]
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("Get best sale offers now!") повертає true
-                </p>
+                Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає []
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("Amazing SalE, only tonight!") повертає true
-                </p>
+                Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76]
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("Trust me, this is not a spam message") повертає true
-                </p>
+                Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76]
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("Get rid of sPaM emails. Our book in on sale!") повертає true
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик функції checkForSpam("[SPAM] How to earn fast money?") повертає true
-                </p>
+                Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
             </li>
         </ul>
     </div>
-    <div>
-        <h2>Задача 4. Доставка товару</h2>
-        <p>
-            Виконуй це завдання у файлі task-4.js
-        </p>
-        <p>
-            Оголоси функцію getShippingCost(country), яка повинна перевіряти можливість доставки товару в країну
-            користувача (параметр country) і повертати повідомлення про результат. Обов'язково використовуй
-            інструкцію switch.
-        </p>
-        <p>
-            Формат рядка, що повертається "Shipping to <em>&lt;country&gt;</em> will cost <em>&lt;price&gt;</em>
-            credits",
-            де
-            замість
-            <em>&lt;country&gt;</em> і
-            <em>&lt;price&gt;</em> необхідно підставити відповідні значення.
-        </p>
-        <p>
-            Список країн і вартість доставки:
-        </p>
-        <ul>
-            <li>
-                <p>
-                    China — 100 кредитів
-                </p>
-            </li>
-            <li>
-                <p>
-                    Chile — 250 кредитів
-                </p>
-            </li>
-            <li>
-                <p>
-                    Australia — 170 кредитів
-                </p>
-            </li>
-            <li>
-                <p>
-                    Jamaica — 120 кредитів
-                </p>
-            </li>
-        </ul>
-        <p>
-            Зі списку видно, що доставка можлива не скрізь. Якщо зазначена країна відсутня у
-            списку,
-            то функція повинна повернути рядок "Sorry, there is no delivery to your country".
-        </p>
-        <p>
-            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її
-            роботи. У консоль будуть виведені результати її роботи.
-        </p>
-        <code><p>
-    console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170
-    credits"<br>
-    console.log(getShippingCost("Germany")); // "Sorry, there is no delivery to your
-    country"<br>
-    console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"<br>
-    console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"<br>
-    console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120
-    credits"<br>
-    console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your
-    country"
-</p></code>
-        <p>
-            Залиш цей код для перевірки ментором.
-        </p>
-        <p>
-            На що буде звертати увагу ментор при перевірці:
-        </p>
-        <ul>
-            <li>
-                <p>
-                    Оголошена функція getShippingCost(country)
-                </p>
-            </li>
-            <li>
-                <p>
-                    У тілі функції використана інструкція switch
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик getShippingCost("Australia") повертає "Shipping to Australia will cost 170
-                    credits"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик getShippingCost("Germany") повертає "Sorry, there is no delivery to your
-                    country"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик getShippingCost("China") повертає "Shipping to China will cost 100 credits"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик getShippingCost("Chile") повертає "Shipping to Chile will cost 250 credits"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик getShippingCost("Jamaica") повертає "Shipping to Jamaica will cost 120
-                    credits"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик getShippingCost("Sweden") повертає "Sorry, there is no delivery to your
-                    country"
-                </p>
-            </li>
-        </ul>
-    </div>
-
 </body>
 
 </html>
