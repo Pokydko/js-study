@@ -31,218 +31,404 @@
     <script src="./js/task-1.js" defer></script>
     <script src="./js/task-2.js" defer></script>
     <script src="./js/task-3.js" defer></script>
+    <script src="./js/task-4.js" defer></script>
 </head>
 
 <body>
     <div>
-        <h1>JS m4</h1>
+        <h1>JS m5</h1>
     </div>
     <div>
         <h2>
-            Задача 1. Пакування товарів
+            Задача 1. Імена користувачів
         </h2>
         <p>
-            Напиши функцію isEnoughCapacity(products, containerSize), яка обчислює, чи помістяться всі товари в
-            контейнер при
-            пакуванні.
-        </p>
-        <p>
-            Функція оголошує два параметри:
-        </p>
-        <ul>
-            <li>
-                products — об’єкт, у якому ключі містять назви товарів, а їхні значення — кількість цих товарів.
-                Наприклад, { apples: 2,
-                grapes: 4 }.
-            </li>
-            <li>
-                containerSize — число, максимальна кількість одиниць товарів, яку в себе може вмістити контейнер.
-            </li>
-        </ul>
-        <p>
-            Функція має повернути результат перевірки, чи помістяться всі товари в контейнер. Тобто порахувати загальну
-            кількість
-            товарів в об’єкті products і повернути true, якщо вона менше або дорівнює containerSize, і false, якщо ні.
+            Напиши стрілочну функцію getUserNames(users), яка прийматиме один параметр users — масив об’єктів
+            користувачів. Функція має повертати масив імен усіх користувачів (властивість name) із масиву users.
         </p>
         <code>
-    console.log(
-    isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
-    ); <em>// true</em><br>    
-    console.log(
-    isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
-    ); <em>// false</em><br>    
-    console.log(
-    isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
-    ); <em>// true</em><br>    
-    console.log(
-    isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
-    ); <em>// false</em>
+    console.log( <br>
+    getUserNames([ <br>
+    {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    balance: 2811
+    }, <br>
+    {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    balance: 3821
+    }, <br>
+    {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    balance: 3793
+    }, <br>
+    {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    balance: 2278
+    }, <br>
+    {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    balance: 3951
+    }, <br>
+    {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    balance: 1498
+    }, <br>
+    {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    balance: 2764
+    }, <br>
+    ]) <br>
+    ); <em>// ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree
+    Anthony"]</em>
 </code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
         <ul>
             <li>
-                Оголошена функція isEnoughCapacity(products, containerSize)
+                Оголошена змінна getUserNames
             </li>
             <li>
-                Виклик isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8) повертає true
+                Змінній getUserNames присвоєна стрілочна функція з параметром (users).
             </li>
             <li>
-                Виклик isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12) повертає false
+                Для перебирання параметра users використовується метод map()
             </li>
             <li>
-                Виклик isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14) повертає true
+                Виклик функції із зазначеним масивом користувачів повертає масив ["Moore Hensley", "Sharlene Bush",
+                "Ross
+                Vazquez",
+                "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
             </li>
             <li>
-                Виклик isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7) повертає false
+                Виклик функції з випадковими, але валідними аргументами повертає правильне значення
             </li>
         </ul>
         <h2>
-            Задача 2. Розрахунок калорій
+            Задача 2. Користувачі з другом
         </h2>
         <p>
-            Напиши функцію calcAverageCalories(days), яка повертає середньодобове значення кількості калорій, які
-            спортсмен споживав
-            протягом тижня.
+            Напиши стрілочну функцію getUsersWithFriend(users, friendName) , яка прийматиме два параметра:
+        </p>
+        <ul>
+            <li>
+                перший параметр users — масив об’єктів користувачів
+            </li>
+            <li>
+                другий параметр friendName — ім’я друга для пошуку.
+            </li>
+        </ul>
+        <p>
+            Функція має повертати масив усіх користувачів із масиву users, у яких є друг з іменем friendName. Друзі
+            кожного
+            користувача зберігаються у властивості friends. Якщо користувачів, у яких є такий других немає, то функція
+            має повернути порожній масив.
         </p>
         <p>
-            Функція очікує один параметр: days — масив об’єктів. Кожен об’єкт описує день тижня та кількість калорій
-            calories, спожитих спортсменом, у цей день.
+            Поради:
         </p>
+        <ul>
+            <li>
+                Метод filter() можна використовувати для створення нового масиву з елементами, які задовольняють певну
+                умову.
+            </li>
+            <li>
+                Використовуй метод includes() для перевірки, чи масив friends містить friendName.
+            </li>
+        </ul>
         <code>
-    console.log(
-    calcAverageCalories([
-    { day: "monday", calories: 3010 },
-    { day: "tuesday", calories: 3200 },
-    { day: "wednesday", calories: 3120 },
-    { day: "thursday", calories: 2900 },
-    { day: "friday", calories: 3450 },
-    { day: "saturday", calories: 3280 },
-    { day: "sunday", calories: 3300 }
-    ])
-    ); <em>// 3180</em><br>
-    
-    console.log(
-    calcAverageCalories([
-    { day: "monday", calories: 2040 },
-    { day: "tuesday", calories: 2270 },
-    { day: "wednesday", calories: 2420 },
-    { day: "thursday", calories: 1900 },
-    { day: "friday", calories: 2370 },
-    { day: "saturday", calories: 2280 },
-    { day: "sunday", calories: 2610 }
-    ])
-    ); <em>// 2270</em><br>
-    
-    console.log(
-    calcAverageCalories([])
-    ); <em>// 0</em>
+    const allUsers = [ <br>
+    {
+    name: "Moore Hensley",
+    friends: ["Sharron Pace"]
+    }, <br>
+    {
+    name: "Sharlene Bush",
+    friends: ["Briana Decker", "Sharron Pace"]
+    }, <br>
+    {
+    name: "Ross Vazquez",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"]
+    }, <br>
+    {
+    name: "Elma Head",
+    friends: ["Goldie Gentry", "Aisha Tran"]
+    }, <br>
+    {
+    name: "Carey Barr",
+    friends: ["Jordan Sampson", "Eddie Strong"]
+    }, <br>
+    {
+    name: "Blackburn Dotson",
+    friends: ["Jacklyn Lucas", "Linda Chapman"]
+    }, <br>
+    {
+    name: "Sheree Anthony",
+    friends: ["Goldie Gentry", "Briana Decker"]
+    } <br>
+    ]; <br>
+    <br>
+    console.log(getUsersWithFriend(allUsers, "Briana Decker")); <br>
+<em>    // [ <br>
+    // { <br>
+    // name: "Sharlene Bush", <br>
+    // friends: ["Briana Decker", "Sharron Pace"] <br>
+    // }, <br>
+    // { <br>
+    // name: "Sheree Anthony", <br>
+    // friends: ["Goldie Gentry", "Briana Decker"] <br>
+    // } <br>
+    // ] <br>
+    <br></em>
+    console.log(getUsersWithFriend(allUsers, "Goldie Gentry")); <br>
+<em>    // [ <br>
+    // { <br>
+    // name: "Elma Head", <br>
+    // friends: ["Goldie Gentry", "Aisha Tran"] <br>
+    // }, <br>
+    // { <br>
+    // name: "Sheree Anthony", <br>
+    // friends: ["Goldie Gentry", "Briana Decker"] <br>
+    // } <br>
+    // ] <br></em>
+    <br>
+    console.log(getUsersWithFriend(allUsers, "Adrian Cross" )); <em>// []</em>
 </code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
         <ul>
             <li>
-                Оголошена функція calcAverageCalories(days)
+                Оголошена змінна getUsersWithFriend
             </li>
             <li>
-                Такий виклик функції calcAverageCalories повертає 3180 <br>
-                calcAverageCalories([<br>
-                { day: "monday", calories: 3010 },<br>
-                { day: "tuesday", calories: 3200 },<br>
-                { day: "wednesday", calories: 3120 },<br>
-                { day: "thursday", calories: 2900 },<br>
-                { day: "friday", calories: 3450 },<br>
-                { day: "saturday", calories: 3280 },<br>
-                { day: "sunday", calories: 3300 }<br>
-                ])
+                Змінній getUsersWithFriend присвоєна стрілочна функція з параметрами (users, friendName)
             </li>
             <li>
-                Такий виклик функції calcAverageCalories повертає 2270 <br>
-                calcAverageCalories([<br>
-                { day: "monday", calories: 2040 },<br>
-                { day: "tuesday", calories: 2270 },<br>
-                { day: "wednesday", calories: 2420 },<br>
-                { day: "thursday", calories: 1900 },<br>
-                { day: "friday", calories: 2370 },<br>
-                { day: "saturday", calories: 2280 },<br>
-                { day: "sunday", calories: 2610 }<br>
-                ])
+                Для перебирання параметра users використовується метод filter()
             </li>
             <li>
-                Такий виклик функції calcAverageCalories повертає 0 <br>
-                calcAverageCalories([])
+                Якщо значення параметра friendName — це рядок "Briana Decker", функція повертає масив об'єктів
+                користувачів з
+                іменами
+                Sharlene Bush і Sheree Anthony
+            </li>
+            <li>
+                Якщо значення параметра friendName — це рядок "Goldie Gentry", функція повертає масив об'єктів
+                користувачів з
+                іменами
+                Elma Head і Sheree Anthony
+            </li>
+            <li>
+                Якщо значення параметра friendName — це рядок "Adrian Cross", функція повертає порожній масив
+            </li>
+            <li>
+                Виклик функції з випадковими, але валідними аргументами повертає правильне значення
             </li>
         </ul>
         <h2>
-            Задача 3. Профіль гравця
+            Задача 3. Сортування за кількістю друзів
         </h2>
         <p>
-            Об’єкт profile описує профіль користувача на ігровій платформі. У його властивостях зберігається ім’я
-            профілю username
-            та кількість активних годин playTime, проведених у грі.
+            Напиши стрілочну функцію sortByDescendingFriendCount(users), яка прийматиме один параметр users — масив
+            об’єктів користувачів.
         </p>
-        <p><em>
-                const profile = { <br>
-                username: "Jacob", <br>
-                playTime: 300, <br>
-                };
-            </em></p>
         <p>
-            Доповни об’єкт profile методами для роботи з його властивостями.
+            Функція має повертати масив усіх користувачів, відсортованих за спаданням кількостій їх друзів (властивість
+            friends).
         </p>
-        <ul>
-            <li>
-                Метод changeUsername(newName) повинен приймати рядок (нове ім’я) в параметр newName та змінювати
-                значення властивості
-                username на нове. Нічого не повертає.
-            </li>
-            <li>
-                Метод updatePlayTime(hours) повинен приймати число (кількість годин) у параметр hours та збільшити на
-                нього значення
-                властивості playTime. Нічого не повертає.
-            </li>
-            <li>
-                Метод getInfo() має повертати рядок формату <em>&lt;Username&gt;</em> has <em>&lt;amount&gt;</em>
-                active hours!, де
-                <em>&lt;Username&gt;</em> —
-                це
-                ім’я профілю, а
-                <em>&lt;amount&gt;</em> — кількість ігрових годин.
-            </li>
-        </ul>
         <code>
-    console.log(profile.getInfo()); <em>// "Jacob has 300 active hours!"</em><br>
-
-    profile.changeUsername("Marco");<br>
-    console.log(profile.getInfo()); <em>// "Marco has 300 active hours!"</em><br>
-
-    profile.updatePlayTime(20); <br>
-    console.log(profile.getInfo()); <em>// "Marco has 320 active hours!"</em>
+    console.log( <br>
+    sortByDescendingFriendCount([ <br>
+    {
+    name: "Moore Hensley",
+    friends: ["Sharron Pace"],
+    gender: "male"
+    }, <br>
+    {
+    name: "Sharlene Bush",
+    friends: ["Briana Decker", "Sharron Pace"],
+    gender: "female"
+    }, <br>
+    {
+    name: "Ross Vazquez",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    gender: "male"
+    }, <br>
+    {
+    name: "Elma Head",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    gender: "female"
+    }, <br>
+    {
+    name: "Carey Barr",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    gender: "male"
+    }, <br>
+    {
+    name: "Blackburn Dotson",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    gender: "male"
+    }, <br>
+    {
+    name: "Sheree Anthony",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    gender: "female"
+    } <br>
+    ]) <br>
+    ); <br>
+<em>    // [ <br>
+    // { <br>
+    // name: "Ross Vazquez", <br>
+    // friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"], <br>
+    // gender: "male" <br>
+    // }, <br>
+    // { <br>
+    // name: "Sharlene Bush", <br>
+    // friends: ["Briana Decker", "Sharron Pace"], <br>
+    // gender: "female" <br>
+    // }, <br>
+    // { <br>
+    // name: "Elma Head", <br>
+    // friends: ["Goldie Gentry", "Aisha Tran"], <br>
+    // gender: "female" <br>
+    // }, <br>
+    // { <br>
+    // name: "Carey Barr", <br>
+    // friends: ["Jordan Sampson", "Eddie Strong"], <br>
+    // gender: "male" <br>
+    // }, <br>
+    // { <br>
+    // name: "Blackburn Dotson", <br>
+    // friends: ["Jacklyn Lucas", "Linda Chapman"], <br>
+    // gender: "male" <br>
+    // }, <br>
+    // { <br>
+    // name: "Sheree Anthony", <br>
+    // friends: ["Goldie Gentry", "Briana Decker"], <br>
+    // gender: "female" <br>
+    // }, <br>
+    // { <br>
+    // name: "Moore Hensley", <br>
+    // friends: ["Sharron Pace"], <br>
+    // gender: "male" <br>
+    // } <br>
+    // ] </em>
 </code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
         <ul>
             <li>
-                Оголошена змінна profile
+                Оголошена змінна sortByDescendingFriendCount
             </li>
             <li>
-                Значення змінної profile — це об’єкт з властивостями username, playTime, getInfo, changeUsername і
-                updatePlayTime
+                Змінній sortByDescendingFriendCount присвоєна стрілочна функція з параметром (users)
             </li>
             <li>
-                Значення властивості getInfo — це функція
+                Для перебирання параметра users використаний метод toSorted()
             </li>
             <li>
-                Значення властивості changeUsername — це функція
+                Виклик функції із зазначеним масивом users повертає новий масив користувачів, відсортований за спаданням
+                кількості їхніх друзів
             </li>
             <li>
-                Значення властивості updatePlayTime — це функція
+                Виклик функції з випадковими, але валідними аргументами повертає правильне значення
+            </li>
+        </ul>
+        <h2>
+            Задача 4. Загальний баланс
+        </h2>
+        <p>
+            Напиши стрілочну функцію getTotalBalanceByGender(users, gender), яка прийматиме два параметра:
+        </p>
+        <ul>
+            <li>
+                перший параметр users — масив об’єктів користувачів,
             </li>
             <li>
-                Для звернення до властивостей об’єкта в його методах використовується this
+                другий параметр gender — рядок, що зберігає стать.
+            </li>
+        </ul>
+        <p>
+            Функція має використовувати ланцюжок виклику методів та повертати загальний баланс користувачів (властивість
+            balance),
+            стать яких (властивість gender) збігається зі значенням параметра gender.
+        </p>
+        <code>
+    const clients = [ <br>
+    {
+    name: "Moore Hensley",
+    gender: "male",
+    balance: 2811
+    }, <br>
+    {
+    name: "Sharlene Bush",
+    gender: "female",
+    balance: 3821
+    }, <br>
+    {
+    name: "Ross Vazquez",
+    gender: "male",
+    balance: 3793
+    }, <br>
+    {
+    name: "Elma Head",
+    gender: "female",
+    balance: 2278
+    }, <br>
+    {
+    name: "Carey Barr",
+    gender: "male",
+    balance: 3951
+    }, <br>
+    {
+    name: "Blackburn Dotson",
+    gender: "male",
+    balance: 1498
+    }, <br>
+    {
+    name: "Sheree Anthony",
+    gender: "female",
+    balance: 2764
+    } <br>
+    ]; <br>
+    <br>
+    console.log(getTotalBalanceByGender(clients, "male")); <em>// 12053</em> <br>
+    <br>
+    console.log(getTotalBalanceByGender(clients, "female")); <em>// 8863</em>
+</code>
+        <p>
+            На що буде звертати увагу ментор при перевірці:
+        </p>
+        <ul>
+            <li>
+                Оголошена змінна getTotalBalanceByGender
+            </li>
+            <li>
+                Змінній getTotalBalanceByGender присвоєна стрілочна функція з параметрами (users, gender)
+            </li>
+            <li>
+                У тілі функції використовується ланцюжок методів у правильному порядку
+            </li>
+            <li>
+                Значення параметра users не змінюється
+            </li>
+            <li>
+                Якщо значення параметра gender — це рядок "male", функція повертає число 12053
+            </li>
+            <li>
+                Якщо значення параметра gender — це рядок "female", функція повертає число 8863
+            </li>
+            <li>
+                Виклик функції з випадковими, але валідними аргументами повертає правильне значення
             </li>
         </ul>
     </div>
