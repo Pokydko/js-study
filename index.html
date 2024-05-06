@@ -35,215 +35,284 @@
 
 <body>
     <div>
-        <h1>JS. m3</h1>
+        <h1>JS - m6</h1>
     </div>
     <div>
+        <h2>
+            Задача 1. Акаунт користувача
+        </h2>
         <p>
-            Термін slug — це зрозумілий людині унікальний ідентифікатор, який використовується у веб розробці для
-            створення
-            читабельних URL-адрес. <br>
-
-            Наприклад, замість того, щоб користувач побачив в адресному рядку mysite.com/posts/1q8fh74tx, можна зробити
-            slug
-            із
-            назви статті. У результаті адреса буде приємнішою для сприйняття: mysite.com/posts/arrays-for-begginers.
-            <br>
-            <span>Slug</span> — це завжди рядок у нижньому регістрі, слова якого розділені тире.
+            Перед звільненням розробник зламав вихідний код управління акаунтами користувачів нашого сервісу доставки
+            їжі. Виконай
+            рефакторинг методів об'єкта customer, розставивши відсутні this під час звернення до властивостей об'єкта.
+        </p>
+        <p>
+            Використай цей стартовий код і виконай рефакторинг. Після оголошення об'єкта ми додали виклики методів. У
+            консоль будуть
+            виведені результати їх роботи. Будь ласка, нічого там не змінюй.
         </p>
 
-        <h2>Задача 1. Генератор slug</h2>
-        <p>Напиши функцію slugify(title), яка приймає заголовок статті, параметр title і повертає slug, створений із
-            цього рядка.</p>
-        <ul>
-            <li>
-                Значенням параметра title будуть рядки, слова яких розділені лише пробілами.
-            </li>
-            <li>
-                Усі символи slug повинні бути в нижньому регістрі.
-            </li>
-            <li>
-                Усі слова slug повинні бути розділені тире.
-            </li>
-        </ul>
-        <p>
-            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль
-            будуть
-            виведені
-            результати її роботи.
-        </p>
         <code>
-    <em>
-        console.log(slugify("Arrays for begginers")); // "arrays-for-begginers" <br>
-        console.log(slugify("English for developer")); // "english-for-developer" <br>
-        console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript" <br>
-        console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); //
-        "how-to-become-a-junior-developer-in-two-weeks"
-    </em>
-</code>
-        <p>
-            Залиш цей код для перевірки ментором.
-        </p>
+          const customer = {<br>
+          username: "Mango",<br>
+          balance: 24000,<br>
+          discount: 0.1,<br>
+          orders: ["Burger", "Pizza", "Salad"],<br>
+          <em>// Change code below this line</em><br>
+          getBalance() {<br>
+          return balance;<br>
+          },<br>
+          getDiscount() {<br>
+          return discount;<br>
+          },<br>
+          setDiscount(value) { <br>
+          discount = value; <br>
+          }, <br>
+          getOrders() { <br>
+          return orders; <br>
+          }, <br>
+          addOrder(cost, order) { <br>
+          balance -= cost - cost * discount; <br>
+          orders.push(order); <br>
+          }, <br>
+          <em>// Change code above this line</em> <br>
+          }; <br>
+          <br>
+          customer.setDiscount(0.15); <br>
+          console.log(customer.getDiscount()); <em>// 0.15</em> <br>
+          customer.addOrder(5000, "Steak"); <br>
+          console.log(customer.getBalance()); <em>// 19750</em> <br>
+          console.log(customer.getOrders()); <em>// ["Burger", "Pizza", "Salad", "Steak"]</em>
+        </code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
         <ul>
             <li>
-                Оголошена функція slugify(title)
+                Оголошена змінна customer
             </li>
             <li>
-                Виклик slugify("Arrays for begginers") повертає "arrays-for-begginers"
+                Значення змінної customer — це об'єкт із властивостями та методами
             </li>
             <li>
-                Виклик slugify("English for developer") повертає "english-for-developer"
+                Виклик customer.getDiscount() повертає поточне значення властивості discount
             </li>
             <li>
-                Виклик slugify("Ten secrets of JavaScript") повертає "ten-secrets-of-javascript"
+                Виклик customer.setDiscount(0.15) оновлює значення властивості discount
             </li>
             <li>
-                Виклик slugify("How to become a JUNIOR developer in TWO WEEKS") повертає
-                "how-to-become-a-junior-developer-in-two-weeks"
+                Виклик customer.getBalance() повертає поточне значення властивості balance.
+            </li>
+            <li>
+                Виклик customer.getOrders() повертає поточне значення властивості orders
+            </li>
+            <li>
+                Виклик customer.addOrder(5000, "Steak") додає "Steak" у масив значень властивості orders та оновлює
+                баланс
+            </li>
+            <li>
+                Метод getBalance об'єкта customer використовує this
+            </li>
+            <li>
+                Метод getDiscount об'єкта customer використовує this
+            </li>
+            <li>
+                Метод setDiscount об'єкта customer використовує this
+            </li>
+            <li>
+                Метод getOrders об'єкта customer використовує this
+            </li>
+            <li>
+                Метод addOrder об'єкта customer використовує this
             </li>
         </ul>
         <h2>
-            Задача 2. Композиція масивів
+            Задача 2. Склад
         </h2>
         <p>
-            Напиши функцію під назвою makeArray, яка приймає три параметри: firstArray (масив), secondArray (масив) і
-            maxLength
-            (число). Функція повинна створювати новий масив, який містить усі елементи з firstArray, а потім усі
-            елементи з
-            secondArray.
+            Створи клас Storage, який створюватиме об'єкти для управління складом товарів. Клас очікує лише один
+            аргумент — початковий масив товарів, який записується до створеного об'єкта в приватну властивість items.
         </p>
         <p>
-            Якщо кількість елементів у новому масиві перевищує maxLength, функція повинна повернути копію масиву з
-            довжиною
-            maxLength елементів. <br>
-            В іншому випадку функція повинна повернути весь новий масив.
-        </p>
+            Оголоси наступні методи класу:
+                getItems() — повертає масив поточних товарів у приватній властивості items.
+            </li>
+            <li>
+                addItem(newItem) — приймає новий товар newItem і додає його до масиву товарів у приватну властивість
+                items об'єкта.
+            </li>
+            <li>
+                removeItem(itemToRemove) — приймає рядок з назвою товару itemToRemove і видаляє його з масиву товарів у
+                приватній властивості items об'єкта.
+            </li>
+        </ul>
         <p>
-            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль
-            будуть
-            виведені
-            результати її роботи.
+            Візьми код нижче з ініціалізацією екземпляра й викликами методів і встав його після оголошення класу для
+            перевірки коректності роботи. У консоль будуть виведені результати їх роботи. Будь ласка, нічого там не
+            змінюй.
         </p>
         <code>
-    <em>
-        console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"] <br>
-        console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston",
-        "Ajax"] <br>
-        console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"] <br>
-        console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"] <br>
-        console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune",
-        "Uranus"] <br>
-        console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
-    </em>
-</code>
-        <p>
-            Залиш цей код для перевірки ментором.
-        </p>
+          const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]); <br>
+          console.log(storage.getItems()); <em>// ["Nanitoids", "Prolonger", "Antigravitator"] </em><br>
+          <br>
+          storage.addItem("Droid"); <br>
+          console.log(storage.getItems()); <em>// ["Nanitoids", "Prolonger", "Antigravitator", "Droid"] </em><br>
+          <br>
+          storage.removeItem("Prolonger"); <br>
+          console.log(storage.getItems()); <em>// ["Nanitoids", "Antigravitator", "Droid"] </em><br>
+          <br>
+          storage.removeItem("Scaner"); <br>
+          console.log(storage.getItems()); <em>// ["Nanitoids", "Antigravitator", "Droid"] </em><br>
+        </code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
         <ul>
             <li>
-                Оголошена функція makeArray(firstArray, secondArray, maxLength)
+                Оголошений клас Storage
             </li>
             <li>
-                Виклик makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3) повертає ["Mango", "Poly", "Ajax"]
+                У класі Storage оголошений метод getItems
             </li>
             <li>
-                Виклик makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4) повертає ["Mango", "Poly",
-                "Houston",
-                "Ajax"]
+                У класі Storage оголошений метод addItem
             </li>
             <li>
-                Виклик makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3) повертає ["Mango", "Ajax",
-                "Chelsea"]
+                У класі Storage оголошений метод removeItem
             </li>
             <li>
-                Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2) повертає ["Earth", "Jupiter"]
+                Властивість items у класі Storage оголошена приватною
             </li>
             <li>
-                Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4) повертає ["Earth", "Jupiter",
-                "Neptune",
-                "Uranus"]
+                Метод getItems повертає значення приватної властивості items екземпляра класу, який його викликає
             </li>
             <li>
-                Виклик makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0) повертає []
+                Метод addItem змінює значення приватної властивості items екземпляра класу, який його викликає
             </li>
             <li>
-                Виклик функції makeArray() з випадковими масивами і випадковим числом повертає правильний масив
+                Метод removeItem змінює значення приватної властивості items екземпляра класу, який його викликає
+            </li>
+            <li>
+                У результаті виклику new Storage(["Nanitoids", "Prolonger", "Antigravitator"]) значення змінної storage
+                — це
+                об'єкт
+            </li>
+            <li>
+                У об’єкта storage немає публічної властивості items
+            </li>
+            <li>
+                Перший виклик storage.getItems() одразу після ініціалізації екземпляра повертає масив ["Nanitoids",
+                "Prolonger",
+                "Antigravitator"]
+            </li>
+            <li>
+                Другий виклик storage.getItems() після виклику storage.addItem("Droid") повертає масив ["Nanitoids",
+                "Prolonger", "Antigravitator", "Droid"]
+            </li>
+            <li>
+                Третій виклик storage.getItems() після виклику storage.removeItem("Prolonger") повертає масив
+                ["Nanitoids",
+                "Antigravitator", "Droid"]
+            </li>
+            <li>
+                Четвертий виклик storage.getItems() після виклику storage.removeItem("Scaner") повертає масив
+                ["Nanitoids",
+                "Antigravitator", "Droid"]
             </li>
         </ul>
         <h2>
-            Задача 3. Фільтрація масиву чисел
+            Задача 3. Конструктор рядків
         </h2>
         <p>
-            Напиши функцію filterArray(numbers, value), яка приймає масив чисел (numbers) та значення (value) як
-            параметри.
-            Функція
-            повинна повертати новий масив лише тих чисел із масиву numbers, які більші за значення value.
+            Напиши клас StringBuilder, який приймає один параметр initialValue — довільний рядок, який записується у
+            приватну властивість value об'єкта, що створюється.
         </p>
         <p>
-            Усередині функції:
+            Оголоси наступні методи класу:
         </p>
         <ul>
             <li>
-                Створи порожній масив, у який будеш додавати підходящі числа.
+                getValue() — повертає поточне значення приватної властивості value.
             </li>
             <li>
-                Використай цикл для ітерації кожного елемента масиву numbers.
+                padEnd(str) — отримує параметр str (рядок) і додає його в кінець значення приватної властивості value
+                об'єкта, який викликає цей метод.
             </li>
             <li>
-                Використовуй умовний оператор if усередині циклу для перевірки кожного елемента и додавання до свого
-                масиву.
+                padStart(str) — отримує параметр str (рядок) і додає його на початок значення приватної властивості
+                value об'єкта, який викликає цей метод.
             </li>
             <li>
-                Поверни свій новий масив з підходящими числами як результат.
+                padBoth(str) — отримує параметр str (рядок) і додає його на початок і в кінець значення приватної
+                властивості value об'єкта, який викликає цей метод.
             </li>
         </ul>
         <p>
-            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль
-            будуть
-            виведені
-            результати її роботи.
+            Візьми код нижче з ініціалізацією екземпляра й викликами методів і встав його після оголошення класу для
+            перевірки коректності роботи. У консоль будуть виведені результати їх роботи. Будь ласка, нічого там не
+            змінюй.
         </p>
         <code>
-    <em>
-        console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5] <br>
-        console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5] <br>
-        console.log(filterArray([1, 2, 3, 4, 5], 5)); // [] <br>
-        console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76] <br>
-        console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
-    </em>
-</code>
-        <p>
-            Залиш цей код для перевірки ментором.
-        </p>
+            const builder = new StringBuilder("."); <br>
+            console.log(builder.getValue()); <em>// "." </em><br>
+            builder.padStart("^"); <br>
+            console.log(builder.getValue()); <em>// "^." </em><br>
+            builder.padEnd("^"); <br>
+            console.log(builder.getValue()); <em>// "^.^" </em><br>
+            builder.padBoth("="); <br>
+            console.log(builder.getValue()); <em>// "=^.^=" </em><br>
+        </code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
         <ul>
             <li>
-                Оголошена функція filterArray(numbers, value)
+                Оголошений клас StringBuilder
             </li>
             <li>
-                Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає [4, 5]
+                Властивість value у класі StringBuilder оголошена приватною
             </li>
             <li>
-                Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає [5]
+                У класі StringBuilder оголошений метод getValue
             </li>
             <li>
-                Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає []
+                Метод getValue повертає значення приватної властивості value екземпляра класу, який його викликає
             </li>
             <li>
-                Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає [41, 76]
+                У класі StringBuilder оголошений метод padEnd
             </li>
             <li>
-                Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає [24, 41, 76]
+                Метод padEnd змінює значення приватної властивості value екземпляра класу, який його викликає
             </li>
             <li>
-                Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+                У класі StringBuilder оголошений метод padStart
+            </li>
+            <li>
+                Метод padStart змінює приватну властивість value екземпляра класу, який його викликає
+            </li>
+            <li>
+                У класі StringBuilder оголошений метод padBoth
+            </li>
+            <li>
+                Метод padBoth змінює значення приватної властивості value екземпляра класу, який його викликає
+            </li>
+            <li>
+                У результаті виклику new StringBuilder(".") значення приватної змінної builder — це об'єкт
+            </li>
+            <li>
+                Об'єкт builder не містить публічну властивість value
+            </li>
+            <li>
+                Перший виклик builder.getValue() одразу після ініціалізації екземпляра повертає рядок .
+            </li>
+            <li>
+                Другий виклик builder.getValue() після виклику builder.padStart("^") повертає рядок ^.
+            </li>
+            <li>
+                Третій виклик builder.getValue() після виклику builder.padEnd("^") повертає рядок ^.^
+            </li>
+            <li>
+                Четвертий виклик builder.getValue() після виклику builder.padBoth("=") повертає рядок =^.^=
             </li>
         </ul>
     </div>
