@@ -53,37 +53,37 @@
         </p>
 
         <code>
-    const customer = {<br>
-    username: "Mango",<br>
-    balance: 24000,<br>
-    discount: 0.1,<br>
-    orders: ["Burger", "Pizza", "Salad"],<br>
-    <em>// Change code below this line</em><br>
-    getBalance() {<br>
-    return balance;<br>
-    },<br>
-    getDiscount() {<br>
-    return discount;<br>
-    },<br>
-    setDiscount(value) { <br>
-    discount = value; <br>
-    }, <br>
-    getOrders() { <br>
-    return orders; <br>
-    }, <br>
-    addOrder(cost, order) { <br>
-    balance -= cost - cost * discount; <br>
-    orders.push(order); <br>
-    }, <br>
-<em>// Change code above this line</em> <br>
-    }; <br>
-     <br>
-    customer.setDiscount(0.15); <br>
-    console.log(customer.getDiscount()); <em>// 0.15</em> <br>
-    customer.addOrder(5000, "Steak"); <br>
-    console.log(customer.getBalance()); <em>// 19750</em> <br>
-    console.log(customer.getOrders()); <em>// ["Burger", "Pizza", "Salad", "Steak"]</em>
-</code>
+          const customer = {<br>
+          username: "Mango",<br>
+          balance: 24000,<br>
+          discount: 0.1,<br>
+          orders: ["Burger", "Pizza", "Salad"],<br>
+          <em>// Change code below this line</em><br>
+          getBalance() {<br>
+          return balance;<br>
+          },<br>
+          getDiscount() {<br>
+          return discount;<br>
+          },<br>
+          setDiscount(value) { <br>
+          discount = value; <br>
+          }, <br>
+          getOrders() { <br>
+          return orders; <br>
+          }, <br>
+          addOrder(cost, order) { <br>
+          balance -= cost - cost * discount; <br>
+          orders.push(order); <br>
+          }, <br>
+          <em>// Change code above this line</em> <br>
+          }; <br>
+          <br>
+          customer.setDiscount(0.15); <br>
+          console.log(customer.getDiscount()); <em>// 0.15</em> <br>
+          customer.addOrder(5000, "Steak"); <br>
+          console.log(customer.getBalance()); <em>// 19750</em> <br>
+          console.log(customer.getOrders()); <em>// ["Burger", "Pizza", "Salad", "Steak"]</em>
+        </code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
@@ -135,9 +135,6 @@
         </p>
         <p>
             Оголоси наступні методи класу:
-        </p>
-        <ul>
-            <li>
                 getItems() — повертає масив поточних товарів у приватній властивості items.
             </li>
             <li>
@@ -155,18 +152,18 @@
             змінюй.
         </p>
         <code>
-    const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]); <br>
-    console.log(storage.getItems()); <em>// ["Nanitoids", "Prolonger", "Antigravitator"] </em><br>
-     <br>
-    storage.addItem("Droid"); <br>
-    console.log(storage.getItems()); <em>// ["Nanitoids", "Prolonger", "Antigravitator", "Droid"] </em><br>
-     <br>
-    storage.removeItem("Prolonger"); <br>
-    console.log(storage.getItems()); <em>// ["Nanitoids", "Antigravitator", "Droid"] </em><br>
-     <br>
-    storage.removeItem("Scaner"); <br>
-    console.log(storage.getItems()); <em>// ["Nanitoids", "Antigravitator", "Droid"] </em><br>
-</code>
+          const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]); <br>
+          console.log(storage.getItems()); <em>// ["Nanitoids", "Prolonger", "Antigravitator"] </em><br>
+          <br>
+          storage.addItem("Droid"); <br>
+          console.log(storage.getItems()); <em>// ["Nanitoids", "Prolonger", "Antigravitator", "Droid"] </em><br>
+          <br>
+          storage.removeItem("Prolonger"); <br>
+          console.log(storage.getItems()); <em>// ["Nanitoids", "Antigravitator", "Droid"] </em><br>
+          <br>
+          storage.removeItem("Scaner"); <br>
+          console.log(storage.getItems()); <em>// ["Nanitoids", "Antigravitator", "Droid"] </em><br>
+        </code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
@@ -319,7 +316,6 @@
             </li>
         </ul>
     </div>
-
 </body>
 
 </html>
