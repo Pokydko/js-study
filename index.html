@@ -31,391 +31,291 @@
     <script src="./js/task-1.js" defer></script>
     <script src="./js/task-2.js" defer></script>
     <script src="./js/task-3.js" defer></script>
-    <script src="./js/task-4.js" defer></script>
 </head>
 
 <body>
     <div>
-        <h1>JS</h1>
+        <h1>JS - m6</h1>
     </div>
     <div>
         <h2>
-            Задача 1. Замовлення дроїдів
+            Задача 1. Акаунт користувача
         </h2>
-        <p>Виконуй це завдання у файлі task-1.js</p>
-        <p>Станція з продажу ремонтних дроїдів готова до запуску, залишилося написати програмне забезпечення для відділу
-            продажів. Оголоси функцію makeTransaction(quantity, pricePerDroid, customerCredits), яка складає та повертає
-            повідомлення про купівлю ремонтних дроїдів.</p>
-        <p>Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:</p>
-        <p>quantity — кількість замовлених дроїдів<br>
-            pricePerDroid — ціна одного дроїда<br>
-            customerCredits — сума коштів на рахунку клієнта</p>
-        <p>Доповни функцію таким чином:</p>
-        <ul>
-            <li>
-                <p>Оголоси змінну для зберігання загальної суми замовлення (загальна вартість усіх замовлених дроїдів) і
-                    задай їй
-                    вираз розрахунку цієї суми.</p>
-            </li>
-            <li>
-                <p>
-                    Додай перевірку, чи зможе клієнт оплатити замовлення:
-                </p>
-                <ul>
-                    <li>
-                        <p>якщо сума до сплати перевищує кількість кредитів на рахунку клієнта, функція має повертати
-                            рядок "Insufficient
-                            funds!"
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            в іншому випадку функція має повертати рядок "You ordered <em>&lt;quantity&gt;</em> droids
-                            worth
-                            <em>&lt;totalPrice&gt;</em> credits!", де
-                            <em>&lt;quantity&gt;</em>
-                            це кількість замовлених дроїдів, а <em>&lt;totalPrice&gt;</em> це їх загальна вартість.
-                        </p>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <p>Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У
-            консоль будуть виведені результати її роботи.</p>
-        <code><p>
-        console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
-        <br>console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
-        <br>console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
-        <br>console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
-        <br>console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
-</p></code>
-        <p>Залиш цей код для перевірки ментором.</p>
-        <p>На що буде звертати увагу ментор при перевірці:</p>
-        <ul>
-            <li>
-                <p>Оголошена функція makeTransaction(quantity, pricePerDroid, customerCredits)</p>
-            </li>
-            <li>
-                <p>
-                    Виклик makeTransaction(5, 3000, 23000) повертає "You ordered 5 droids worth 15000 credits!"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик makeTransaction(3, 1000, 15000) повертає "You ordered 3 droids worth 3000 credits!"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик makeTransaction(10, 5000, 8000) повертає "Insufficient funds!"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик makeTransaction(8, 2000, 10000) повертає "Insufficient funds!"
-                </p>
-            </li>
-            <li>
-                <p>
-                    Виклик makeTransaction(10, 500, 5000) повертає "You ordered 10 droids worth 5000 credits!"
-                </p>
-            </li>
-        </ul>
-    </div>
+        <p>
+            Перед звільненням розробник зламав вихідний код управління акаунтами користувачів нашого сервісу доставки
+            їжі. Виконай
+            рефакторинг методів об'єкта customer, розставивши відсутні this під час звернення до властивостей об'єкта.
+        </p>
+        <p>
+            Використай цей стартовий код і виконай рефакторинг. Після оголошення об'єкта ми додали виклики методів. У
+            консоль будуть
+            виведені результати їх роботи. Будь ласка, нічого там не змінюй.
+        </p>
 
-
-    <div>
-        <h2>Задача 2. Форматування повідомлення</h2>
-        <p>
-            Виконуй це завдання у файлі task-2.js
-        </p>
-        <p>
-            Оголоси функцію formatMessage(message, maxLength), яка приймає рядок (параметр message) та перевіряє
-            його довжину відповідно до заданої максимальної довжини (параметр maxLength).
-        </p>
-        <p>
-            Доповни код функції таким чином, що:
-        </p>
-        <ul>
-            <li>
-                <p>
-                    Якщо довжина рядка дорівнює або менша за maxLength, то функція повертає початковий рядок без змін.
-                </p>
-            </li>
-            <li>
-                <p>
-                    Якщо довжина перевищує maxLength, то функція обрізає рядок до maxLength символів, додає трикрапку
-                    "..." в кінці та повертає обрізану версію.
-                </p>
-            </li>
-        </ul>
-        <p>
-            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У
-            консоль
-            будуть виведені результати її роботи.
-        </p>
-        <code><p>
-    console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."<br>
-    console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"<br>
-    console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."<br>
-    console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus
-    nec"<br>
-    console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."<br>
-    console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a
-    felis in nunc fringilla"
-</p></code>
-        <p>
-            Залиш цей код для перевірки ментором.
-        </p>
+        <code>
+    const customer = {<br>
+    username: "Mango",<br>
+    balance: 24000,<br>
+    discount: 0.1,<br>
+    orders: ["Burger", "Pizza", "Salad"],<br>
+    <em>// Change code below this line</em><br>
+    getBalance() {<br>
+    return balance;<br>
+    },<br>
+    getDiscount() {<br>
+    return discount;<br>
+    },<br>
+    setDiscount(value) { <br>
+    discount = value; <br>
+    }, <br>
+    getOrders() { <br>
+    return orders; <br>
+    }, <br>
+    addOrder(cost, order) { <br>
+    balance -= cost - cost * discount; <br>
+    orders.push(order); <br>
+    }, <br>
+<em>// Change code above this line</em> <br>
+    }; <br>
+     <br>
+    customer.setDiscount(0.15); <br>
+    console.log(customer.getDiscount()); <em>// 0.15</em> <br>
+    customer.addOrder(5000, "Steak"); <br>
+    console.log(customer.getBalance()); <em>// 19750</em> <br>
+    console.log(customer.getOrders()); <em>// ["Burger", "Pizza", "Salad", "Steak"]</em>
+</code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
         <ul>
             <li>
-                <p>
-                    Оголошена функція formatMessage(message, maxLength)
-                </p>
+                Оголошена змінна customer
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Curabitur ligula sapien", 16) повертає "Curabitur ligula..."
-                </p>
+                Значення змінної customer — це об'єкт із властивостями та методами
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Curabitur ligula sapien", 23) повертає "Curabitur ligula sapien"
-                </p>
+                Виклик customer.getDiscount() повертає поточне значення властивості discount
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Vestibulum facilisis purus nec", 20) повертає "Vestibulum
-                    facilisis..."
-                </p>
+                Виклик customer.setDiscount(0.15) оновлює значення властивості discount
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Vestibulum facilisis purus nec", 30) повертає "Vestibulum facilisis
-                    purus
-                    nec"
-                </p>
+                Виклик customer.getBalance() повертає поточне значення властивості balance.
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 15) повертає "Nunc sed
-                    turpis..."
-                </p>
+                Виклик customer.getOrders() повертає поточне значення властивості orders
             </li>
             <li>
-                <p>
-                    Виклик функції formatMessage("Nunc sed turpis a felis in nunc fringilla", 41) повертає "Nunc sed
-                    turpis a felis in nunc fringilla"
-                </p>
+                Виклик customer.addOrder(5000, "Steak") додає "Steak" у масив значень властивості orders та оновлює
+                баланс
+            </li>
+            <li>
+                Метод getBalance об'єкта customer використовує this
+            </li>
+            <li>
+                Метод getDiscount об'єкта customer використовує this
+            </li>
+            <li>
+                Метод setDiscount об'єкта customer використовує this
+            </li>
+            <li>
+                Метод getOrders об'єкта customer використовує this
+            </li>
+            <li>
+                Метод addOrder об'єкта customer використовує this
             </li>
         </ul>
-    </div>
-    <div>
-        <h2>Задача 3. Перевірка спаму</h2>
+        <h2>
+            Задача 2. Склад
+        </h2>
         <p>
-            Виконуй це завдання у файлі task-3.js
+            Створи клас Storage, який створюватиме об'єкти для управління складом товарів. Клас очікує лише один
+            аргумент — початковий масив товарів, який записується до створеного об'єкта в приватну властивість items.
         </p>
         <p>
-            Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його на вміст заборонених
-            слів spam і sale, і повертає результат перевірки. Слова в рядку параметра message можуть бути в
-            довільному регістрі, наприклад SPAM або sAlE.
-        </p>
-        <p>
-            Доповни код функції таким чином, що:
+            Оголоси наступні методи класу:
         </p>
         <ul>
             <li>
-                <p>
-                    Якщо знайдено заборонене слово (spam або sale), то функція повертає буль true
-                </p>
+                getItems() — повертає масив поточних товарів у приватній властивості items.
             </li>
             <li>
-                <p>
-                    Якщо в рядку відсутні заборонені слова, функція повертає буль false
-                </p>
+                addItem(newItem) — приймає новий товар newItem і додає його до масиву товарів у приватну властивість
+                items об'єкта.
             </li>
-
+            <li>
+                removeItem(itemToRemove) — приймає рядок з назвою товару itemToRemove і видаляє його з масиву товарів у
+                приватній властивості items об'єкта.
+            </li>
         </ul>
         <p>
-            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У
-            консоль
-            будуть виведені результати її роботи.
+            Візьми код нижче з ініціалізацією екземпляра й викликами методів і встав його після оголошення класу для
+            перевірки коректності роботи. У консоль будуть виведені результати їх роботи. Будь ласка, нічого там не
+            змінюй.
         </p>
-        <code><p>
-    console.log(checkForSpam("Latest technology news")); // false<br>
-    console.log(checkForSpam("JavaScript weekly newsletter")); // false <br>
-    console.log(checkForSpam("Get best sale offers now!")); // true <br>
-    console.log(checkForSpam("Amazing SalE, only tonight!")); // true <br>
-    console.log(checkForSpam("Trust me, this is not a spam message")); // true <br>
-    console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true <br>
-    console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
-</p></code>
-        <p>
-            Залиш цей код для перевірки ментором.
-        </p>
+        <code>
+    const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]); <br>
+    console.log(storage.getItems()); <em>// ["Nanitoids", "Prolonger", "Antigravitator"] </em><br>
+     <br>
+    storage.addItem("Droid"); <br>
+    console.log(storage.getItems()); <em>// ["Nanitoids", "Prolonger", "Antigravitator", "Droid"] </em><br>
+     <br>
+    storage.removeItem("Prolonger"); <br>
+    console.log(storage.getItems()); <em>// ["Nanitoids", "Antigravitator", "Droid"] </em><br>
+     <br>
+    storage.removeItem("Scaner"); <br>
+    console.log(storage.getItems()); <em>// ["Nanitoids", "Antigravitator", "Droid"] </em><br>
+</code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
         <ul>
             <li>
-                <p>
-                    Оголошена функція checkForSpam(message).
-                </p>
+                Оголошений клас Storage
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("Latest technology news") повертає false
-                </p>
+                У класі Storage оголошений метод getItems
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("JavaScript weekly newsletter")повертає false
-                </p>
+                У класі Storage оголошений метод addItem
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("Get best sale offers now!") повертає true
-                </p>
+                У класі Storage оголошений метод removeItem
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("Amazing SalE, only tonight!") повертає true
-                </p>
+                Властивість items у класі Storage оголошена приватною
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("Trust me, this is not a spam message") повертає true
-                </p>
+                Метод getItems повертає значення приватної властивості items екземпляра класу, який його викликає
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("Get rid of sPaM emails. Our book in on sale!") повертає true
-                </p>
+                Метод addItem змінює значення приватної властивості items екземпляра класу, який його викликає
             </li>
             <li>
-                <p>
-                    Виклик функції checkForSpam("[SPAM] How to earn fast money?") повертає true
-                </p>
+                Метод removeItem змінює значення приватної властивості items екземпляра класу, який його викликає
+            </li>
+            <li>
+                У результаті виклику new Storage(["Nanitoids", "Prolonger", "Antigravitator"]) значення змінної storage
+                — це
+                об'єкт
+            </li>
+            <li>
+                У об’єкта storage немає публічної властивості items
+            </li>
+            <li>
+                Перший виклик storage.getItems() одразу після ініціалізації екземпляра повертає масив ["Nanitoids",
+                "Prolonger",
+                "Antigravitator"]
+            </li>
+            <li>
+                Другий виклик storage.getItems() після виклику storage.addItem("Droid") повертає масив ["Nanitoids",
+                "Prolonger", "Antigravitator", "Droid"]
+            </li>
+            <li>
+                Третій виклик storage.getItems() після виклику storage.removeItem("Prolonger") повертає масив
+                ["Nanitoids",
+                "Antigravitator", "Droid"]
+            </li>
+            <li>
+                Четвертий виклик storage.getItems() після виклику storage.removeItem("Scaner") повертає масив
+                ["Nanitoids",
+                "Antigravitator", "Droid"]
             </li>
         </ul>
-    </div>
-    <div>
-        <h2>Задача 4. Доставка товару</h2>
+        <h2>
+            Задача 3. Конструктор рядків
+        </h2>
         <p>
-            Виконуй це завдання у файлі task-4.js
+            Напиши клас StringBuilder, який приймає один параметр initialValue — довільний рядок, який записується у
+            приватну властивість value об'єкта, що створюється.
         </p>
         <p>
-            Оголоси функцію getShippingCost(country), яка повинна перевіряти можливість доставки товару в країну
-            користувача (параметр country) і повертати повідомлення про результат. Обов'язково використовуй
-            інструкцію switch.
-        </p>
-        <p>
-            Формат рядка, що повертається "Shipping to <em>&lt;country&gt;</em> will cost <em>&lt;price&gt;</em>
-            credits",
-            де
-            замість
-            <em>&lt;country&gt;</em> і
-            <em>&lt;price&gt;</em> необхідно підставити відповідні значення.
-        </p>
-        <p>
-            Список країн і вартість доставки:
+            Оголоси наступні методи класу:
         </p>
         <ul>
             <li>
-                <p>
-                    China — 100 кредитів
-                </p>
+                getValue() — повертає поточне значення приватної властивості value.
             </li>
             <li>
-                <p>
-                    Chile — 250 кредитів
-                </p>
+                padEnd(str) — отримує параметр str (рядок) і додає його в кінець значення приватної властивості value
+                об'єкта, який викликає цей метод.
             </li>
             <li>
-                <p>
-                    Australia — 170 кредитів
-                </p>
+                padStart(str) — отримує параметр str (рядок) і додає його на початок значення приватної властивості
+                value об'єкта, який викликає цей метод.
             </li>
             <li>
-                <p>
-                    Jamaica — 120 кредитів
-                </p>
+                padBoth(str) — отримує параметр str (рядок) і додає його на початок і в кінець значення приватної
+                властивості value об'єкта, який викликає цей метод.
             </li>
         </ul>
         <p>
-            Зі списку видно, що доставка можлива не скрізь. Якщо зазначена країна відсутня у
-            списку,
-            то функція повинна повернути рядок "Sorry, there is no delivery to your country".
+            Візьми код нижче з ініціалізацією екземпляра й викликами методів і встав його після оголошення класу для
+            перевірки коректності роботи. У консоль будуть виведені результати їх роботи. Будь ласка, нічого там не
+            змінюй.
         </p>
-        <p>
-            Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її
-            роботи. У консоль будуть виведені результати її роботи.
-        </p>
-        <code><p>
-    console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170
-    credits"<br>
-    console.log(getShippingCost("Germany")); // "Sorry, there is no delivery to your
-    country"<br>
-    console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"<br>
-    console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"<br>
-    console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120
-    credits"<br>
-    console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your
-    country"
-</p></code>
-        <p>
-            Залиш цей код для перевірки ментором.
-        </p>
+        <code>
+            const builder = new StringBuilder("."); <br>
+            console.log(builder.getValue()); <em>// "." </em><br>
+            builder.padStart("^"); <br>
+            console.log(builder.getValue()); <em>// "^." </em><br>
+            builder.padEnd("^"); <br>
+            console.log(builder.getValue()); <em>// "^.^" </em><br>
+            builder.padBoth("="); <br>
+            console.log(builder.getValue()); <em>// "=^.^=" </em><br>
+        </code>
         <p>
             На що буде звертати увагу ментор при перевірці:
         </p>
         <ul>
             <li>
-                <p>
-                    Оголошена функція getShippingCost(country)
-                </p>
+                Оголошений клас StringBuilder
             </li>
             <li>
-                <p>
-                    У тілі функції використана інструкція switch
-                </p>
+                Властивість value у класі StringBuilder оголошена приватною
             </li>
             <li>
-                <p>
-                    Виклик getShippingCost("Australia") повертає "Shipping to Australia will cost 170
-                    credits"
-                </p>
+                У класі StringBuilder оголошений метод getValue
             </li>
             <li>
-                <p>
-                    Виклик getShippingCost("Germany") повертає "Sorry, there is no delivery to your
-                    country"
-                </p>
+                Метод getValue повертає значення приватної властивості value екземпляра класу, який його викликає
             </li>
             <li>
-                <p>
-                    Виклик getShippingCost("China") повертає "Shipping to China will cost 100 credits"
-                </p>
+                У класі StringBuilder оголошений метод padEnd
             </li>
             <li>
-                <p>
-                    Виклик getShippingCost("Chile") повертає "Shipping to Chile will cost 250 credits"
-                </p>
+                Метод padEnd змінює значення приватної властивості value екземпляра класу, який його викликає
             </li>
             <li>
-                <p>
-                    Виклик getShippingCost("Jamaica") повертає "Shipping to Jamaica will cost 120
-                    credits"
-                </p>
+                У класі StringBuilder оголошений метод padStart
             </li>
             <li>
-                <p>
-                    Виклик getShippingCost("Sweden") повертає "Sorry, there is no delivery to your
-                    country"
-                </p>
+                Метод padStart змінює приватну властивість value екземпляра класу, який його викликає
+            </li>
+            <li>
+                У класі StringBuilder оголошений метод padBoth
+            </li>
+            <li>
+                Метод padBoth змінює значення приватної властивості value екземпляра класу, який його викликає
+            </li>
+            <li>
+                У результаті виклику new StringBuilder(".") значення приватної змінної builder — це об'єкт
+            </li>
+            <li>
+                Об'єкт builder не містить публічну властивість value
+            </li>
+            <li>
+                Перший виклик builder.getValue() одразу після ініціалізації екземпляра повертає рядок .
+            </li>
+            <li>
+                Другий виклик builder.getValue() після виклику builder.padStart("^") повертає рядок ^.
+            </li>
+            <li>
+                Третій виклик builder.getValue() після виклику builder.padEnd("^") повертає рядок ^.^
+            </li>
+            <li>
+                Четвертий виклик builder.getValue() після виклику builder.padBoth("=") повертає рядок =^.^=
             </li>
         </ul>
     </div>

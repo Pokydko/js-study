@@ -1,15 +1,28 @@
 "use strict";
 
-function checkForSpam(message) {
-  return (
-    message.toLowerCase().includes(`spam`) ||
-    message.toLowerCase().includes(`sale`)
-  );
+class StringBuilder {
+  #value;
+  constructor(initialValue) {
+    this.#value = initialValue;
+  }
+  getValue() {
+    return this.#value;
+  }
+  padStart(str) {
+    this.#value = str + this.#value;
+  }
+  padEnd(str) {
+    this.#value += str;
+  }
+  padBoth(str) {
+    this.#value = str + this.#value + str;
+  }
 }
-console.log(checkForSpam("Latest technology news")); // false
-console.log(checkForSpam("JavaScript weekly newsletter")); // false
-console.log(checkForSpam("Get best sale offers now!")); // true
-console.log(checkForSpam("Amazing SalE, only tonight!")); // true
-console.log(checkForSpam("Trust me, this is not a spam message")); // true
-console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
-console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
