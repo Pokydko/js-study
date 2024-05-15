@@ -1,15 +1,11 @@
 "use strict";
 
-function checkForSpam(message) {
-  return (
-    message.toLowerCase().includes(`spam`) ||
-    message.toLowerCase().includes(`sale`)
-  );
-}
-console.log(checkForSpam("Latest technology news")); // false
-console.log(checkForSpam("JavaScript weekly newsletter")); // false
-console.log(checkForSpam("Get best sale offers now!")); // true
-console.log(checkForSpam("Amazing SalE, only tonight!")); // true
-console.log(checkForSpam("Trust me, this is not a spam message")); // true
-console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
-console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
+document.querySelector("h1").classList.add("input-task-title");
+
+const textInput = document.querySelector("input#name-input");
+const output = document.querySelector("span#name-output");
+
+textInput.addEventListener("input", (event) => {
+  const textInInput = event.currentTarget.value.trim(); // "очищене від пробілів по краях", але як лишити пробіли "в   середині"?
+  output.textContent = textInInput === "" ? "Anonymous" : textInInput;
+});
