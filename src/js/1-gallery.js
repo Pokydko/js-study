@@ -1,5 +1,8 @@
 'use strict';
 
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -69,48 +72,28 @@ const images = [
 function createElementsFrom(arr) {
   let code = ``;
   for (const { preview, original, description } of arr) {
-    code += `<li class="gallery-item"><a class="gallery-link" href="${original}"><img class="gallery-image" src="${preview}" data-source="${original}" alt="${description}"/></a></li>`;
+    code += `
+    <li class="gallery-item">
+      <a class="gallery-link" href="${original}">
+        <img
+          class="gallery-image"
+          src="${preview}" 
+          alt="${description}"
+        />
+      </a>
+    </li>`;
   }
   return code;
-}
-
-function openModal(event) {
-  event.preventDefault();
-  const src =
-    event.type === 'click'
-      ? event.target.dataset.source
-      : event.target.children[0].dataset.source;
-  if (!src) {
-    // console.log(
-    //   `You watched pictures on this page (before reload) ${viewHisory.length} times. ` +
-    //     viewHisory.join(', '),
-    // );
-    return;
-  }
-  const alt =
-    event.type === 'click' ? event.target.alt : event.target.children[0].alt;
-
-  // ficha
-  console.log(alt);
-  viewHisory.push(alt);
-
-  modal = basicLightbox.create(
-    `<img class="basicLightbox-image" src="${src}" alt="${alt}"/>`,
-  );
-  modal.show();
 }
 
 const gallery = document.querySelector('ul.gallery');
 gallery.insertAdjacentHTML('afterbegin', createElementsFrom(images));
 
-const viewHisory = [];
-let modal;
-gallery.addEventListener('click', openModal);
-gallery.addEventListener('keyup', event => {
-  if (modal) {
-    modal.close();
-    modal = '';
-    return;
-  }
-  if (event.key === 'Enter' || event.key === ' ') openModal(event);
+let simpleGallery = new SimpleLightbox('.gallery-link', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+
+simpleGallery.on('error.simplelightbox', function (e) {
+  console.log(e);
 });
