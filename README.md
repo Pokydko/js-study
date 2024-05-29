@@ -13,4 +13,5 @@ SimpleLightbox (яка повністю берее на себе обробку 
 відкриття і закриття модального вікна, а також гортання зображень за допомогою
 клавіатури).
 
-2-form
+2-form: A wonderful and unforgettable feedback form designed especially for
+you...
