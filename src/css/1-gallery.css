@@ -23,6 +23,8 @@ img {
   gap: 24px;
   justify-content: center;
   align-items: center;
+  padding: 24px 0;
+  background-color: #ffffff;
 }
 
 .gallery-item {
