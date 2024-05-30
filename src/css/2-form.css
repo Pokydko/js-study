@@ -6,10 +6,10 @@ body {
   background-color: #f4f4f4;
 }
 
-.feedback-section {
-  background-color: #ffffff;
+.feedback-form {
   max-width: 408px;
   padding: 24px;
+  background-color: #ffffff;
   color: #2e2f42;
   font-weight: 400;
   font-size: 16px;
@@ -35,13 +35,13 @@ input {
 }
 
 textarea {
-  background-color: transparent;
   display: block;
   width: 100%;
   margin-top: 8px;
   margin-bottom: 16px;
   padding: 8px 16px;
   border-radius: 4px;
+  background-color: transparent;
   resize: none;
 }
 
