@@ -7,30 +7,29 @@ import imageErrUrl from '../img/err.svg';
 import imageOkUrl from '../img/ok.svg';
 
 const form = document.querySelector('form');
+const message = {
+  position: 'topRight',
+  theme: 'dark',
+  iconUrl: imageOkUrl,
+  color: '#59a10d',
+};
 
 form.addEventListener('submit', event => {
   event.preventDefault();
 
+  if (form.state.value === 'rejected') {
+    message.iconUrl = imageErrUrl;
+    message.color = '#ef4040';
+  }
+
   makePromise(form.state.value === 'fulfilled', form.delay.value)
-    .then(delay =>
-      iziToast.success({
-        title: 'OK',
-        position: 'topRight',
-        theme: 'dark',
-        iconUrl: imageOkUrl,
-        color: '#59a10d',
-        message: `Fulfilled promise in ${delay}ms`,
-      })
-    )
+    .then(delay => {
+      message.message = `Fulfilled promise in ${delay}ms`;
+      iziToast.success(message);
+    })
     .catch(delay => {
-      iziToast.error({
-        position: 'topRight',
-        theme: 'dark',
-        messageColor: 'white',
-        iconUrl: imageErrUrl,
-        color: '#ef4040',
-        message: `Rejected promise in ${delay}ms`,
-      });
+      message.message = `Rejected promise in ${delay}ms`;
+      iziToast.error(message);
     });
 
   form.reset();
