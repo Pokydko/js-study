@@ -10,24 +10,21 @@ const form = document.querySelector('form');
 const message = {
   position: 'topRight',
   theme: 'dark',
-  iconUrl: imageOkUrl,
-  color: '#59a10d',
 };
 
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  if (form.state.value === 'rejected') {
-    message.iconUrl = imageErrUrl;
-    message.color = '#ef4040';
-  }
-
   makePromise(form.state.value === 'fulfilled', form.delay.value)
     .then(delay => {
+      message.iconUrl = imageOkUrl;
+      message.color = '#59a10d';
       message.message = `Fulfilled promise in ${delay}ms`;
       iziToast.success(message);
     })
     .catch(delay => {
+      message.iconUrl = imageErrUrl;
+      message.color = '#ef4040';
       message.message = `Rejected promise in ${delay}ms`;
       iziToast.error(message);
     });
