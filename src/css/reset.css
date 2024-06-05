@@ -25,6 +25,8 @@ a {
 }
 
 button {
+  border: none;
+  outline: transparent;
   cursor: pointer;
 }
 
@@ -32,4 +34,8 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+fieldset {
+  margin: 0;
 }

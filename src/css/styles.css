@@ -5,8 +5,7 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./1-gallery.css');
-@import url('./2-form.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 :root {
   background-color: rgba(255, 255, 255, 0.87);
@@ -26,4 +25,58 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #2e2f42;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+
+section {
+  margin: 10% auto;
+}
+@media only screen and (min-width: 768px) {
+  section {
+    margin: 36px 156px;
+  }
+}
+
+input {
+  height: 40px;
+  padding: 8px 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  background: transparent;
+  outline: transparent;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+input:hover {
+  border-color: #000000;
+}
+input:focus {
+  border-color: #4e75ff;
+}
+
+button {
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #4e75ff;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+button:hover {
+  background: #6c8cff;
 }

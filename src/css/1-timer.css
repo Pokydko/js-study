@@ -1,0 +1,43 @@
+@import url('./styles.css');
+
+.section-timer {
+  max-width: 355px;
+  font-size: 0;
+}
+
+#datetime-picker {
+  width: calc(100% - 83px);
+  margin-right: 8px;
+  margin-bottom: 32px;
+}
+#datetime-picker:disabled {
+  background: #fafafa;
+}
+
+button[data-start] {
+  min-width: 75px;
+}
+button[data-start]:disabled {
+  background: #cfcfcf;
+}
+
+.timer {
+  display: flex;
+  gap: 24px;
+  font-size: 16px;
+}
+
+.field {
+  text-align: center;
+}
+
+.value {
+  display: block;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.label {
+  text-transform: uppercase;
+}

@@ -1,0 +1,53 @@
+@import url('./styles.css');
+
+body {
+  letter-spacing: 0.04em;
+}
+
+.section-snackbar {
+  width: 360px;
+}
+
+form.form {
+  max-width: 360px;
+}
+
+button {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input[type='number'] {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+input[type='radio'] {
+  width: 20px;
+  height: 20px;
+  margin-top: 0;
+  margin-right: 14px;
+  margin-left: 0;
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 78px;
+  margin-bottom: 24px;
+  padding: 12px 28px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+}
+fieldset:hover,
+fieldset:focus-within {
+  border-color: #000000;
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  letter-spacing: normal;
+}
