@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snackbar (with iziToast)</title>
+  <link type="image/svg+xml" href="/js-study/assets/snackbar-d698b411.svg" rel="icon">
+  <meta name="description"
+    content="A wonderful and unforgettable Snackbar with Promicemaker designed especially for you">
+  
+  <script type="module" crossorigin src="/js-study/commonHelpers2.js"></script>
+  <link rel="modulepreload" crossorigin href="/js-study/assets/err-502c49cb.js">
+  <link rel="modulepreload" crossorigin href="/js-study/assets/vendor-77e16229.js">
+  <link rel="stylesheet" href="/js-study/assets/vendor-7a007824.css">
+  <link rel="stylesheet" href="/js-study/assets/2-snackbar-70d77d74.css">
+</head>
+
+<body>
+  <a href="./index.html">Go to home</a>
+  <section class="section-snackbar">
+    <h1 hidden="">Snackbar</h1>
+    <form class="form">
+      <label>
+        Delay (ms)
+        <input name="delay" type="number" required>
+      </label>
+
+      <fieldset>
+        <legend>State</legend>
+        <label>
+          <input name="state" type="radio" value="fulfilled" required>
+          Fulfilled
+        </label>
+        <label>
+          <input name="state" type="radio" value="rejected" required>
+          Rejected
+        </label>
+      </fieldset>
+
+      <button type="submit">Create notification</button>
+    </form>
+  </section>
+  
+</body>
+
+</html>
