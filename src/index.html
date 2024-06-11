@@ -4,18 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Timer and Promicemaker</title>
-  <link type="image/svg+xml" href="./img/ts.svg" rel="icon">
-  <meta name="description"
-    content="Follow the link you coud find cool _Timer_ or unforgatable _Promice maker/decliner_">
+  <title>Live Gallery</title>
+  <link type="image/svg+xml" href="./img/g.svg" rel="icon">
+  <meta name="description" content="Gallery by your request">
+  <link href="./css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-  <h1 hidden="">Timer and Promicemaker for you</h1>
-  <ul>
-    <li><a href="./1-timer.html">Super-duper-cool <strong>Timer</strong> counting to choosen date</a></li>
-    <li><a href="./2-snackbar.html">Amazing-unforgettable <strong>Snackbar</strong> of Promice making/declining</a></li>
-  </ul>
+  <header>
+    <div class="slide">
+      <input id="slide" name="check" type="checkbox" value="None">
+      <label for="slide"></label>
+    </div>
+    <form>
+      <input id="searchrequest" name="searchrequest" type="text" placeholder="Search images..." required>
+      <button class="blue-btn" type="submit">Search</button>
+    </form>
+    <div class="space"></div>
+  </header>
+  <main>
+    <h1 hidden="">Live Gallery</h1>
+    <div id="content">
+      <ul class="gallery"></ul>
+    </div>
+  </main>
+  <script src="./main.js" type="module" defer></script>
 </body>
 
 </html>

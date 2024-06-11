@@ -2,10 +2,8 @@
 
 goit-js-tasks
 
-m10: layout -
-https://www.figma.com/design/m8k9NQV7qZrtYDCvxfD68B/%D0%94%D0%97-JavaScript?node-id=3-969&t=UdoFUqdTsWdOVrmB-0
+m11: layout -
+https://www.figma.com/file/m8k9NQV7qZrtYDCvxfD68B/%D0%94%D0%97-JavaScript?type=design&node-id=3-1009&mode=design&t=eCh8cUwdfWOakuAr-0
 tamplate - https://github.com/goitacademy/vanilla-app-template
 
-1-timer (with flatpickr and iziToast)
-
-2-snackbar (with iziToast)
+Застосунок пошуку зображень за ключовим словом і їх перегляду в галереї.
