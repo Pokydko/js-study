@@ -182,11 +182,14 @@ button.blue-btn:hover {
     display: none;
   }
   header {
-    display: block;
+    /* display: block; */
     padding-top: 10px;
   }
   header .slide {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
   }
   main {
     padding-top: 118px;

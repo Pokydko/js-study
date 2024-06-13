@@ -6,6 +6,8 @@ import 'izitoast/dist/css/iziToast.min.css';
 import pixabayApi from './js/pixabay-api';
 import render from './js/render-functions';
 
+import iconErr from './img/err.svg';
+
 const gallery = document.querySelector('.gallery');
 
 document.querySelector('form').addEventListener('submit', event => {
@@ -32,14 +34,20 @@ document.querySelector('form').addEventListener('submit', event => {
 const errMessage = {
   position: 'topRight',
   theme: 'dark',
-  iconUrl: './img/err.svg',
+  iconUrl: iconErr,
   color: '#ef4040',
   message:
     'Sorry, there are no images matching <br/>your search query. Please try again!',
 };
 
-document.getElementById('slide').addEventListener('click', () => {
+const colorSwitcher = document.querySelector('.slide');
+colorSwitcher.addEventListener('click', e => {
   document.body.classList.toggle('black');
   document.body.firstElementChild.classList.toggle('black');
   document.getElementById('searchrequest').classList.toggle('black');
+  e.target.firstElementChild.checked = !e.target.firstElementChild.checked;
 });
+
+setTimeout(() => {
+  colorSwitcher.style.opacity = '0.1';
+}, 5000);
