@@ -27,6 +27,7 @@ body {
   color: #2e2f42;
   font-family: 'Montserrat', sans-serif;
   line-height: 1.5;
+  text-align: center;
 }
 
 header {
@@ -104,7 +105,7 @@ button.blue-btn:hover {
   gap: 24px;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 32px;
 }
 
 .gallery-item {
@@ -160,9 +161,15 @@ button.blue-btn:hover {
   line-height: 1.34;
 }
 
-/* ========== basicLightbox styles ========== */
-.basicLightbox {
-  background: #2e2f42cc;
+#loadMore {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1000 ease;
+}
+#loadMore.blue-btn {
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 1000 ease;
 }
 
 /* ========== adapt styles ========== */
@@ -182,17 +189,18 @@ button.blue-btn:hover {
     display: none;
   }
   header {
-    /* display: block; */
     padding-top: 10px;
   }
   header .slide {
-    /* margin-bottom: 10px; */
     position: fixed;
     bottom: 20px;
     left: 20px;
   }
+  form {
+    margin-bottom: 10px;
+  }
   main {
-    padding-top: 118px;
+    padding-top: 68px;
   }
   .gallery-item {
     max-width: 575px;

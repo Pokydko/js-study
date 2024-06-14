@@ -53,7 +53,7 @@
     transition: all 0.4s ease;
   }
   input[type='checkbox'] {
-    /* visibility: hidden; */
+    visibility: hidden;
     &:checked + label {
       left: 43px;
       background-color: #222222;
@@ -66,11 +66,11 @@
   width: 80px;
 }
 
-#loader {
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 32px;
+/* loader styles */
+#loadMore.loader {
+  opacity: 1;
 }
+
 .loader {
   position: relative;
   width: 32px;
@@ -90,7 +90,6 @@
   border-radius: 50%;
   animation: fill 0.9s ease-in infinite alternate;
 }
-
 .loader::after {
   right: 48px;
   left: auto;
@@ -105,3 +104,4 @@
     box-shadow: 0 0 0 10px inset;
   }
 }
+/* /loader styles */

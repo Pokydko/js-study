@@ -5,31 +5,63 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 import pixabayApi from './js/pixabay-api';
 import render from './js/render-functions';
+import decor from './js/decor';
 
 import iconErr from './img/err.svg';
 
 const gallery = document.querySelector('.gallery');
+const loadMoreBtn = document.getElementById('loadMore');
+
+let searchrequest;
+let pageNumber;
+const onEachPage = 15;
+
+loadMoreBtn.addEventListener('click', e => {
+  pageNumber++;
+  request();
+  setTimeout(() => {
+    const card = document.querySelector('li.gallery-item');
+    window.scrollBy(0, 2 * card.getBoundingClientRect().height);
+  }, 1000);
+});
 
 document.querySelector('form').addEventListener('submit', event => {
   event.preventDefault();
-  gallery.classList.add('loader');
+  pageNumber = 1;
+  searchrequest = event.target.searchrequest.value;
   gallery.innerHTML = '';
+  request();
+  event.target.reset();
+});
 
-  pixabayApi(event.target.searchrequest.value)
-    .then(({ hits }) => {
-      if (hits.length === 0) iziToast.error(errMessage);
-      else render(hits, gallery);
-      gallery.classList.remove('loader');
+async function request() {
+  loadMoreBtn.textContent = '';
+  loadMoreBtn.classList.remove('blue-btn');
+  loadMoreBtn.classList.add('loader');
+  await pixabayApi(searchrequest, pageNumber, onEachPage)
+    .then(({ data, status, statusText, headers, config }) => {
+      if (data.hits.length === 0) iziToast.error(errMessage);
+      else render(data.hits, gallery);
+      if (data.totalHits > pageNumber * 15) {
+        loadMoreBtn.classList.add('blue-btn');
+        loadMoreBtn.textContent = 'Load more';
+      } else {
+        loadMoreBtn.classList.remove('blue-btn');
+        iziToast.info({
+          position: 'topRight',
+          message: "We're sorry, but you've reached the end of search results.",
+        });
+      }
     })
     .catch(error => {
-      gallery.classList.remove('loader');
       gallery.innerHTML =
         'Something went wrong. <br/>Please, check your connection and try again.';
       console.error(error);
+      loadMoreBtn.classList.add('blue-btn');
+      loadMoreBtn.innerHTML = '<a href="/">Refreash page</a>';
     });
-
-  event.target.reset();
-});
+  loadMoreBtn.classList.remove('loader');
+}
 
 const errMessage = {
   position: 'topRight',
@@ -40,14 +72,4 @@ const errMessage = {
     'Sorry, there are no images matching <br/>your search query. Please try again!',
 };
 
-const colorSwitcher = document.querySelector('.slide');
-colorSwitcher.addEventListener('click', e => {
-  document.body.classList.toggle('black');
-  document.body.firstElementChild.classList.toggle('black');
-  document.getElementById('searchrequest').classList.toggle('black');
-  e.target.firstElementChild.checked = !e.target.firstElementChild.checked;
-});
-
-setTimeout(() => {
-  colorSwitcher.style.opacity = '0.1';
-}, 5000);
+decor(document.querySelector('.slide'));
