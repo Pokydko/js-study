@@ -72,6 +72,7 @@
 }
 
 .loader {
+  background-color: transparent;
   position: relative;
   width: 32px;
   height: 32px;

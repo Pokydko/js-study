@@ -39,20 +39,22 @@ async function request() {
   loadMoreBtn.classList.remove('blue-btn');
   loadMoreBtn.classList.add('loader');
   await pixabayApi(searchrequest, pageNumber, onEachPage)
-    .then(({ data, status, statusText, headers, config }) => {
+    .then(({ data }) => {
       if (data.hits.length === 0) {
         iziToast.error(errMessage);
         return;
       } else render(data.hits, gallery);
-      if (data.totalHits > pageNumber * 15) {
+      if (data.totalHits > pageNumber * onEachPage) {
         loadMoreBtn.classList.add('blue-btn');
         loadMoreBtn.textContent = 'Load more';
       } else {
         loadMoreBtn.classList.remove('blue-btn');
-        iziToast.info({
-          position: 'topRight',
-          message: "We're sorry, but you've reached the end of search results.",
-        });
+        if (pageNumber > 1)
+          iziToast.info({
+            position: 'topRight',
+            message:
+              "We're sorry, but you've reached the end of search results.",
+          });
       }
     })
     .catch(error => {
