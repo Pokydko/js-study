@@ -40,8 +40,10 @@ async function request() {
   loadMoreBtn.classList.add('loader');
   await pixabayApi(searchrequest, pageNumber, onEachPage)
     .then(({ data, status, statusText, headers, config }) => {
-      if (data.hits.length === 0) iziToast.error(errMessage);
-      else render(data.hits, gallery);
+      if (data.hits.length === 0) {
+        iziToast.error(errMessage);
+        return;
+      } else render(data.hits, gallery);
       if (data.totalHits > pageNumber * 15) {
         loadMoreBtn.classList.add('blue-btn');
         loadMoreBtn.textContent = 'Load more';
