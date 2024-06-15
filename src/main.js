@@ -49,12 +49,11 @@ async function request() {
         loadMoreBtn.textContent = 'Load more';
       } else {
         loadMoreBtn.classList.remove('blue-btn');
-        if (pageNumber > 1)
-          iziToast.info({
-            position: 'topRight',
-            message:
-              "We're sorry, but you've reached the end of search results.",
-          });
+        // if (pageNumber > 1)
+        iziToast.info({
+          position: 'topRight',
+          message: "We're sorry, but you've reached the end of search results.",
+        });
       }
     })
     .catch(error => {
